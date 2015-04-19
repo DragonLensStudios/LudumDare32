@@ -36,7 +36,7 @@ public class PlayerAttack : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D col)
 	{
 
-		if (Input.GetButtonDown ("Fire1") && col.gameObject.tag == "monster") {
+		if (Input.GetButton ("Fire1") && col.gameObject.tag == "monster") {
 
 			attacked = true;
 
