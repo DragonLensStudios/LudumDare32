@@ -76,13 +76,13 @@ public class InteractionNPC : MonoBehaviour {
 			if (clickCount < NPCC.message_dialog.Count)
 			{
 				dialogText.text = NPCC.message_dialog[clickCount];
-				if (clickCount == NPCC.message_dialog.Count - 1)
-				{
-					dialogPanel.SetActive(false);
-					clickCount = 0;
-				}		
+	
 			}
-			
+			else if (clickCount == NPCC.message_dialog.Count)
+			{
+				dialogPanel.SetActive(false);
+				clickCount = 0;
+			}	
 //			if(NPC.name == "Lumi")
 //		}	{
 
