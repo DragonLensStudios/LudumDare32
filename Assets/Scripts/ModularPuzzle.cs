@@ -78,15 +78,33 @@ public class ModularPuzzle : MonoBehaviour {
 	}
 	public void BoxPuzzle()
 	{
-		if (puzzle_object.GetComponent<BoxCollider2D>() != null )
+		if (puzzle_object.GetComponent<Rigidbody2D>() == null)
 		{
-			if (puzzle_object.GetComponent<BoxCollider2D>().isTrigger)
-			{
-				Debug.Log ("Found Box Collider 2D");
-			}
+			Rigidbody2D rb_temp =  puzzle_object.AddComponent<Rigidbody2D>();
+			rb_temp.gravityScale = 0;
+			rb_temp.fixedAngle = true;
+		}
+		if (puzzle_object.GetComponent<BoxCollider2D>().isTrigger == false)
+		{
+			BoxCollider2D bctemp = puzzle_object.AddComponent<BoxCollider2D>();
+			bctemp.isTrigger = true;
+			bctemp.size.Set (.5f, .5f);
+		}
 
 		}
+
+	public void OnTriggerEnter2D (Collider2D col)
+	{
+		Debug.Log("Push!");
 	}
+//		if (puzzle_object.GetComponent<BoxCollider2D>() != null )
+//		{
+//			if (puzzle_object.GetComponent<BoxCollider2D>().isTrigger)
+//			{
+//				Debug.Log ("Found Box Collider 2D");
+//			}
+//
+//		}
 
 	public void CustomPuzzle(){
 		Debug.Log ("Custom Puzzle");
