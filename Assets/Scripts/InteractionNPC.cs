@@ -23,6 +23,7 @@ public class InteractionNPC : MonoBehaviour {
 		dialogPanel = GameObject.FindGameObjectWithTag ("DialogPanel");
 		dialogText = GameObject.Find("DialogText").GetComponent<Text>();
 		charName = PlayerPrefs.GetString ("charName");
+
 		dialogPanel.SetActive (false);
 		clickCount = 0;
 		
