@@ -1,6 +1,9 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+
+using UnityEngine;
 using UnityEditor;
 using System.Collections;
+
 [CustomEditor(typeof(ModularPuzzle))]
 public class ModularPuzzleInspector :Editor {
 
@@ -21,3 +24,7 @@ public class ModularPuzzleInspector :Editor {
 		}
 	}
 }
+
+
+
+#endif
