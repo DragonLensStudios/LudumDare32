@@ -32,9 +32,7 @@ public class UIDialog : MonoBehaviour {
 		if(clickCount == 3)
 			dialogString = ("Is everything okay, Suni?");
 		if(clickCount == 4)
-
-
-	
+			;
 	}
 
 	public void OnClick(){
