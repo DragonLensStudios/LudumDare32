@@ -5,7 +5,7 @@ using System.Collections;
 public class PlayerAttack : MonoBehaviour {
 	public Transform target;
 	Animator anim;
-	bool isAttacking;
+
 	public bool attacked;
 	public GameObject isUser;
 	public SlimeisHit Slime;
@@ -17,26 +17,12 @@ public class PlayerAttack : MonoBehaviour {
  
 	}
 	
-	// Update is called once per frame
-	void Update () {
 
-	if (Input.GetButton ("Fire1")) {
-		isAttacking = true;
-
-
-	} else {
-		isAttacking = false;
-}
-
-		anim.SetBool ("isAttacking", isAttacking);
-
-			
-	}
 
 	void OnTriggerStay2D(Collider2D col)
 	{
 
-		if (Input.GetButtonDown ("Fire1") && col.gameObject.tag == "monster") {
+		if (Input.GetButton ("Fire1") && col.gameObject.tag == "monster") {
 
 			attacked = true;
 
