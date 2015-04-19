@@ -3,6 +3,9 @@ using System.Collections;
 
 public class CloudMovement : MonoBehaviour {
 
+	public GameObject explosion;
+	private GameObject explosionClone;
+
 	public bool movingCloud;
 	public Transform target;
 	bool top, right, left, bottom;
@@ -40,6 +43,20 @@ public class CloudMovement : MonoBehaviour {
 		} else {
 			movingCloud = true;
 		}
+
+
+
+
+		if (Input.GetKeyDown ("1")) {
+
+			explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
+			Instantiate (explosion, transform.position, Quaternion.identity);
+			Destroy(explosionClone);
+		}
+
+
+
+
 
 
 }

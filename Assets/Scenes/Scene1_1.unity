@@ -130,6 +130,8 @@ GameObject:
   - 95: {fileID: 141106696}
   - 61: {fileID: 141106695}
   - 114: {fileID: 141106694}
+  - 114: {fileID: 141106698}
+  - 50: {fileID: 141106699}
   m_Layer: 2
   m_Name: Slime 6
   m_TagString: monster
@@ -221,6 +223,36 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a90cd0ce1b5301b4b88758c301ad5dee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &141106698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 141106692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206cd337101bdea49b1a22526fe44439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  sightRadius: 0
+  lastSeenLocation: {x: 0, y: 0, z: 0}
+  targetLocation: {x: 0, y: 0, z: 0}
+--- !u!50 &141106699
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 141106692}
+  m_Mass: 5
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &146620615
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +390,8 @@ GameObject:
   - 95: {fileID: 400922151}
   - 61: {fileID: 400922150}
   - 114: {fileID: 400922149}
+  - 114: {fileID: 400922153}
+  - 50: {fileID: 400922154}
   m_Layer: 2
   m_Name: Slime 5
   m_TagString: monster
@@ -449,6 +483,36 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a90cd0ce1b5301b4b88758c301ad5dee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &400922153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 400922147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206cd337101bdea49b1a22526fe44439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  sightRadius: 0
+  lastSeenLocation: {x: 0, y: 0, z: 0}
+  targetLocation: {x: 0, y: 0, z: 0}
+--- !u!50 &400922154
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 400922147}
+  m_Mass: 5
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &422107571
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,6 +694,27 @@ MonoBehaviour:
   dialogText: {fileID: 0}
   dialogString: 
   dialogPanel: {fileID: 0}
+--- !u!1 &443724769 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 163734, guid: 1eded6e8d0c2df14398c673735a5a472, type: 2}
+  m_PrefabInternal: {fileID: 804150127}
+--- !u!95 &443724772
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 443724769}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a7ada60a7421d5545b492aa1191b2983, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &462461602
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +827,8 @@ GameObject:
   - 95: {fileID: 603759462}
   - 61: {fileID: 603759461}
   - 114: {fileID: 603759465}
+  - 114: {fileID: 603759466}
+  - 50: {fileID: 603759467}
   m_Layer: 2
   m_Name: Slime 2
   m_TagString: monster
@@ -833,6 +920,36 @@ MonoBehaviour:
   attacked: 0
   health: 2
   player: {fileID: 0}
+--- !u!114 &603759466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 603759460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206cd337101bdea49b1a22526fe44439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  sightRadius: 0
+  lastSeenLocation: {x: 0, y: 0, z: 0}
+  targetLocation: {x: 0, y: 0, z: 0}
+--- !u!50 &603759467
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 603759460}
+  m_Mass: 5
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &644391376
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +962,8 @@ GameObject:
   - 95: {fileID: 644391379}
   - 61: {fileID: 644391378}
   - 114: {fileID: 644391377}
+  - 114: {fileID: 644391382}
+  - 50: {fileID: 644391383}
   m_Layer: 2
   m_Name: Slime 4
   m_TagString: monster
@@ -936,6 +1055,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
+--- !u!114 &644391382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 644391376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206cd337101bdea49b1a22526fe44439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  sightRadius: 0
+  lastSeenLocation: {x: 0, y: 0, z: 0}
+  targetLocation: {x: 0, y: 0, z: 0}
+--- !u!50 &644391383
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 644391376}
+  m_Mass: 5
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &662915828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,6 +1798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186e4704fb0605349951a9e1452cfcdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 179166, guid: 6e86224d4a3c0064c824553d02b7715d, type: 2}
   movingCloud: 0
   target: {fileID: 422107574}
   horizontalSpeed: 0
@@ -1665,6 +1815,8 @@ GameObject:
   - 95: {fileID: 1354374470}
   - 61: {fileID: 1354374469}
   - 114: {fileID: 1354374468}
+  - 114: {fileID: 1354374472}
+  - 50: {fileID: 1354374473}
   m_Layer: 2
   m_Name: Slime 3
   m_TagString: monster
@@ -1756,6 +1908,36 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a90cd0ce1b5301b4b88758c301ad5dee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1354374472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1354374466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206cd337101bdea49b1a22526fe44439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  sightRadius: 0
+  lastSeenLocation: {x: 0, y: 0, z: 0}
+  targetLocation: {x: 0, y: 0, z: 0}
+--- !u!50 &1354374473
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1354374466}
+  m_Mass: 5
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1 &1487044988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,6 +2113,8 @@ GameObject:
   - 95: {fileID: 1970627260}
   - 61: {fileID: 1970627259}
   - 114: {fileID: 1970627258}
+  - 114: {fileID: 1970627262}
+  - 50: {fileID: 1970627263}
   m_Layer: 2
   m_Name: Slime 7
   m_TagString: monster
@@ -2022,3 +2206,33 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a90cd0ce1b5301b4b88758c301ad5dee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1970627262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1970627256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206cd337101bdea49b1a22526fe44439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  sightRadius: 0
+  lastSeenLocation: {x: 0, y: 0, z: 0}
+  targetLocation: {x: 0, y: 0, z: 0}
+--- !u!50 &1970627263
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1970627256}
+  m_Mass: 5
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
