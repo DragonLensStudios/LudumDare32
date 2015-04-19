@@ -651,10 +651,10 @@ RectTransform:
   - {fileID: 945302558}
   m_Father: {fileID: 1487044992}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -476.440002, y: -237.509995}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: .5, y: 0}
+  m_AnchorMax: {x: .5, y: 0}
+  m_AnchoredPosition: {x: -476.440002, y: -8.50999451}
+  m_SizeDelta: {x: 978, y: 458}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &662915830
 MonoBehaviour:
@@ -695,6 +695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogText: {fileID: 0}
+  dialogString: 
 --- !u!1001 &804150127
 Prefab:
   m_ObjectHideFlags: 0
