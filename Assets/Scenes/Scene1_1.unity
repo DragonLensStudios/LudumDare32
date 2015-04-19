@@ -262,7 +262,7 @@ GameObject:
   - 114: {fileID: 422107581}
   m_Layer: 0
   m_Name: Suni
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,6 +379,9 @@ MonoBehaviour:
   attacked: 0
   isUser: {fileID: 422107571}
   Slime: {fileID: 0}
+  slimeHealth: 0
+  playerSwordDamage: 0
+  damageDeal: 0
 --- !u!61 &422107579
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -415,9 +418,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25d0aee07ebbc94e89dc6d320f4b77b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NPC: {fileID: 0}
+  NPCC: {fileID: 0}
   MainCharacter: {fileID: 0}
-  NPCZONE: 0
+  hasDialogBox: []
+  message_dialog: []
   dialogText: {fileID: 0}
   dialogString: 
   dialogPanel: {fileID: 0}
@@ -435,7 +439,7 @@ GameObject:
   - 61: {fileID: 462461607}
   m_Layer: 0
   m_Name: Lumi
-  m_TagString: Untagged
+  m_TagString: HasDialog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -508,6 +512,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPC: {fileID: 0}
   MainCharacter: {fileID: 0}
+  message_dialog:
+  - Hello
+  - HEYY
+  - FUCKK
+  talking_player: {fileID: 0}
 --- !u!61 &462461607
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -533,7 +542,9 @@ GameObject:
   - 95: {fileID: 603759462}
   - 61: {fileID: 603759461}
   - 114: {fileID: 603759465}
-  m_Layer: 0
+  - 114: {fileID: 603759467}
+  - 50: {fileID: 603759466}
+  m_Layer: 2
   m_Name: Slime 2
   m_TagString: monster
   m_Icon: {fileID: 0}
@@ -603,11 +614,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 603759460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1549.00012, y: -972.999939, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 11.6272545, y: -6.2213788, z: 0}
+  m_LocalScale: {x: .00535394065, y: .00535393506, z: .00535393506}
   m_Children: []
-  m_Father: {fileID: 813151368}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!114 &603759465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,6 +633,38 @@ MonoBehaviour:
   anim: {fileID: 0}
   Slime: {fileID: 0}
   attacked: 0
+  health: 2
+  player: {fileID: 0}
+--- !u!50 &603759466
+Rigidbody2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 603759460}
+  m_Mass: 5
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!114 &603759467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 603759460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206cd337101bdea49b1a22526fe44439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  sightRadius: 0
+  lastSeenLocation: {x: 0, y: 0, z: 0}
+  targetLocation: {x: 0, y: 0, z: 0}
 --- !u!1 &662915828
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,34 +782,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1eded6e8d0c2df14398c673735a5a472, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &813151367
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 813151368}
-  m_Layer: 0
-  m_Name: SLIMES
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &813151368
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 813151367}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.33400011, y: -1.01199996, z: 0}
-  m_LocalScale: {x: .00535394065, y: .00535393506, z: .00535393506}
-  m_Children:
-  - {fileID: 603759464}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
 --- !u!1 &839288830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,10 +1378,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186e4704fb0605349951a9e1452cfcdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 179166, guid: 6e86224d4a3c0064c824553d02b7715d, type: 2}
   movingCloud: 0
   target: {fileID: 422107574}
   horizontalSpeed: 0
   verticalSpeed: 0
+  Slime: {fileID: 0}
+  cloudDamage: 0
 --- !u!1 &1487044988
 GameObject:
   m_ObjectHideFlags: 0
