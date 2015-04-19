@@ -1803,6 +1803,8 @@ MonoBehaviour:
   target: {fileID: 422107574}
   horizontalSpeed: 0
   verticalSpeed: 0
+  Slime: {fileID: 0}
+  cloudDamage: 0
 --- !u!1 &1354374466
 GameObject:
   m_ObjectHideFlags: 0
