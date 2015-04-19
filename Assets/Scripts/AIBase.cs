@@ -26,7 +26,6 @@ public class AIBase : MonoBehaviour {
 
 		if (move == Vector2.zero)
 			destReached = true;
-		else
 		transform.position += new Vector3 (move.x, move.y, 0);
 	}
 	void onCollisionEntered2D(Collision2D col){
