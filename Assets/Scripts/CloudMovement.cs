@@ -13,10 +13,13 @@ public class CloudMovement : MonoBehaviour {
 	public float verticalSpeed;
 	private Vector3 Pos;
 	private Vector3 mousePosition;
+	public SlimeisHit Slime;
+	public int cloudDamage;
+
 	// Use this for initialization
 	void Start () {
 		mousePosition = transform.position;
-
+		cloudDamage = 3;
 
 	}
 	
@@ -44,27 +47,37 @@ public class CloudMovement : MonoBehaviour {
 			movingCloud = true;
 		}
 
-
-
-
 		if (Input.GetKeyDown ("1")) {
-
-			explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
+			
+			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
 			Instantiate (explosion, transform.position, Quaternion.identity);
-			Destroy(explosionClone);
+			//if(explosionClone = this.transform.position);
 		}
+	
+	}
 
 
 
 
 
 
-}
 
 	void CloudMoveComplete(){
 		Debug.Log ("The cloud is done moving");
 	}
 
 
+void OnCollision2D(Collision2D col){
+	
+	if (Input.GetKeyDown ("1")) {
+		
+		Slime = col.gameObject.GetComponent<SlimeisHit> ();
+		Slime.health -= cloudDamage;
+		
+		
+		//Destroy(explosionClone);
+		
+	}
+}
 
 }
