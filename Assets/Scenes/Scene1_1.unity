@@ -418,6 +418,9 @@ MonoBehaviour:
   NPC: {fileID: 0}
   MainCharacter: {fileID: 0}
   NPCZONE: 0
+  dialogText: {fileID: 0}
+  dialogString: 
+  dialogPanel: {fileID: 0}
 --- !u!1 &462461602
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +480,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300032, guid: e140d610105fc10428a1c2b1a57fe655, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &462461605
@@ -629,7 +632,6 @@ GameObject:
   - 224: {fileID: 662915829}
   - 222: {fileID: 662915831}
   - 114: {fileID: 662915830}
-  - 114: {fileID: 662915832}
   m_Layer: 5
   m_Name: Dialog Panel
   m_TagString: Untagged
@@ -669,7 +671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: .0815311447, g: .426470578, b: .369377136, a: 1}
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -683,18 +685,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 662915828}
---- !u!114 &662915832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 662915828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b55a073d93609f44a997f3510de4864, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogText: {fileID: 0}
 --- !u!1001 &804150127
 Prefab:
   m_ObjectHideFlags: 0
@@ -1026,7 +1016,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 662915832}
+      - m_Target: {fileID: 422107581}
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -1053,7 +1043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1378,7 +1368,7 @@ GameObject:
   - 114: {fileID: 1487044989}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: DialogPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
