@@ -31,8 +31,8 @@ public class UIDialog : MonoBehaviour {
 			dialogString = ("They were wandering and asking questions for some strange reason.");
 		if(clickCount == 3)
 			dialogString = ("Is everything okay, Suni?");
-		if(clickCount == 4)
-
+		if (clickCount == 4)
+			;
 
 	
 	}
