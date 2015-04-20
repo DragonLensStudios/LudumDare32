@@ -61,11 +61,11 @@ public class CloudMovement : MonoBehaviour {
 			iTween.MoveUpdate (gameObject, iTween.Hash ("position", Pos + Vector3.left * h, "time", 1.5f, "easetype", "linear", "oncomplete", "CloudMoveComplete"));
 			iTween.MoveUpdate (gameObject, iTween.Hash ("position", Pos + Vector3.down * y, "time", 1.5f, "easetype", "linear", "oncomplete", "CloudMoveComplete"));
 		}
-		
+
 		if (Input.GetButton ("Fire2")) {
 			movingCloud = false;
 			mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			iTween.Stop(gameObject);
+			//iTween.Stop(gameObject);
 
 			iTween.MoveTo (gameObject, iTween.Hash ("position", mousePosition, "time", 2.5f, "easetype", "linear"));
 		} else {
@@ -134,10 +134,9 @@ public class CloudMovement : MonoBehaviour {
 		Debug.Log ("The cloud is done moving");
 	}
 
-
+	/*
 	void OnTriggerEnter2D(Collider2D col){
 		{
-
 
 			Slime_Hit = col.gameObject.GetComponent<SlimeisHit> ();
 
@@ -145,10 +144,11 @@ public class CloudMovement : MonoBehaviour {
 				Debug.Log("stopping");
 				atplayer = true;
 			}
+
 				//Destroy(explosionClone);
 		
 		}
-	}
+	}*/
 
 	void OnTriggerExit2D(Collider2D col){
 		{
@@ -167,6 +167,15 @@ public class CloudMovement : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D col)
 	{	
+		Slime_Hit = col.gameObject.GetComponent<SlimeisHit> ();
+		
+		if(col.tag == "Player"){
+			Debug.Log("stopping");
+			atplayer = true;
+		}
+
+
+
 		if (Input.GetKeyDown ("1")) { 
 				Slime_Hit.health -= cloudDamageTornado;
 			}

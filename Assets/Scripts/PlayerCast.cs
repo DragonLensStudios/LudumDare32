@@ -25,13 +25,13 @@ public class PlayerCast : MonoBehaviour {
 			Debug.Log ("Set trigger");
 		}
 
-		if (Input.GetButton ("Fire1")) {
+		/*if (Input.GetButton ("Fire1")) {
 			isAttacking = true;
 		} else {
 			isAttacking = false;
-		}
+		}*/
 			
-		anim.SetBool ("isAttacking", isAttacking);
+		//anim.SetBool ("isAttacking", isAttacking);
 		anim.SetBool ("isCasting", isCasting);
 	}
 }
