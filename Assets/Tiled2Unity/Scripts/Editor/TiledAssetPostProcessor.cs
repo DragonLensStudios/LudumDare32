@@ -183,5 +183,6 @@ namespace Tiled2Unity
             textureImporter.textureFormat = TextureImporterFormat.AutomaticTruecolor;
         }
 
+
     }
 }
