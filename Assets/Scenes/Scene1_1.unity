@@ -327,7 +327,7 @@ Transform:
   - {fileID: 755257115}
   - {fileID: 1295838160}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &77409188
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +402,7 @@ Transform:
   - {fileID: 324004184}
   - {fileID: 1684702154}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &91537967
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,7 +973,7 @@ Transform:
   m_Children:
   - {fileID: 389165310}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &212140305
 GameObject:
   m_ObjectHideFlags: 0
@@ -2153,7 +2153,7 @@ Transform:
   - {fileID: 146620620}
   - {fileID: 1487044992}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!114 &422107575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2256,6 +2256,8 @@ MonoBehaviour:
   dialogString: 
   dialogPanel: {fileID: 0}
   nametagPanel: {fileID: 0}
+  dummyset: 0
+  Dummy: {fileID: 0}
 --- !u!1 &424454909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2938,7 +2940,7 @@ Transform:
   - {fileID: 2001862982}
   - {fileID: 1030897036}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &575428480
 GameObject:
   m_ObjectHideFlags: 0
@@ -3214,7 +3216,7 @@ Transform:
   m_LocalScale: {x: .00535394065, y: .00535393506, z: .00535393506}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!114 &603759465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3791,6 +3793,36 @@ BoxCollider2D:
   m_Offset: {x: .299999982, y: -.319999993}
   serializedVersion: 2
   m_Size: {x: .599999964, y: .639999986}
+--- !u!1 &705665875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 705665876}
+  m_Layer: 0
+  m_Name: sunikumo dialogs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &705665876
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 705665875}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.4219999, y: -6.76999998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1159911646}
+  - {fileID: 1183001031}
+  - {fileID: 933415481}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1 &712468722
 GameObject:
   m_ObjectHideFlags: 0
@@ -4905,6 +4937,96 @@ Transform:
   - {fileID: 351208217}
   m_Father: {fileID: 216266669}
   m_RootOrder: 2
+--- !u!1 &933415480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 933415481}
+  - 61: {fileID: 933415485}
+  - 61: {fileID: 933415484}
+  - 114: {fileID: 933415483}
+  - 114: {fileID: 933415482}
+  m_Layer: 0
+  m_Name: Dialog Area 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &933415481
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 933415480}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.64000034, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 705665876}
+  m_RootOrder: 2
+--- !u!114 &933415482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 933415480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c0c69be65c66d4788f97d041fc9512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc_name: Suni
+  NPC: {fileID: 0}
+  MainCharacter: {fileID: 0}
+  message_dialog:
+  - '...'
+  talking_player: {fileID: 0}
+--- !u!114 &933415483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 933415480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a814e0e94df51b34ca0168728b989184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DummyNPCs: []
+  istalking: 0
+  isconversationdone: 0
+  count: 0
+  has_started: 1
+--- !u!61 &933415484
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 933415480}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -5.025352, y: 1.57666874}
+  serializedVersion: 2
+  m_Size: {x: 3.15511227, y: .379473686}
+--- !u!61 &933415485
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 933415480}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -4.21867943, y: .643201351}
+  serializedVersion: 2
+  m_Size: {x: 3.81795883, y: 1.54484749}
 --- !u!1 &945302557
 GameObject:
   m_ObjectHideFlags: 0
@@ -5913,6 +6035,153 @@ BoxCollider2D:
   m_Offset: {x: .305000007, y: -.389999986}
   serializedVersion: 2
   m_Size: {x: .610000014, y: .779999971}
+--- !u!1 &1159911641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1159911646}
+  - 61: {fileID: 1159911645}
+  - 114: {fileID: 1159911644}
+  - 114: {fileID: 1159911643}
+  - 114: {fileID: 1159911642}
+  - 114: {fileID: 1159911648}
+  - 114: {fileID: 1159911647}
+  - 61: {fileID: 1159911649}
+  m_Layer: 0
+  m_Name: Dialog Area 1
+  m_TagString: HasDialog
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1159911642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1159911641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c0c69be65c66d4788f97d041fc9512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc_name: suni
+  NPC: {fileID: 0}
+  MainCharacter: {fileID: 0}
+  message_dialog:
+  - '...'
+  talking_player: {fileID: 0}
+--- !u!114 &1159911643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1159911641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c0c69be65c66d4788f97d041fc9512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc_name: ???
+  NPC: {fileID: 0}
+  MainCharacter: {fileID: 0}
+  message_dialog:
+  - (Squeak...)
+  talking_player: {fileID: 0}
+--- !u!114 &1159911644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1159911641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c0c69be65c66d4788f97d041fc9512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc_name: Suni
+  NPC: {fileID: 0}
+  MainCharacter: {fileID: 0}
+  message_dialog:
+  - '*Yawns* Ahh... I feel so energized! I could run and run and never get tired!
+    I guess I should head back... I still have a lot to d--AHHHHHHHHH! [a huge beam
+    of energy hits Suni'
+  - 'SUNI: Urgh... What the hell was that?'
+  talking_player: {fileID: 0}
+--- !u!61 &1159911645
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1159911641}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: .648892403, y: 1.88507843}
+  serializedVersion: 2
+  m_Size: {x: 4.76975536, y: 6.45933342}
+--- !u!4 &1159911646
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1159911641}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 705665876}
+  m_RootOrder: 0
+--- !u!114 &1159911647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1159911641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a814e0e94df51b34ca0168728b989184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DummyNPCs: []
+  istalking: 0
+  isconversationdone: 0
+  count: 0
+  has_started: 1
+--- !u!114 &1159911648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1159911641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c0c69be65c66d4788f97d041fc9512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc_name: ???
+  NPC: {fileID: 0}
+  MainCharacter: {fileID: 0}
+  message_dialog:
+  - (Squeak!)
+  talking_player: {fileID: 0}
+--- !u!61 &1159911649
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1159911641}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -1.91589069, y: -.319314957}
+  serializedVersion: 2
+  m_Size: {x: .361370564, y: 1.63862991}
 --- !u!1 &1166207188
 GameObject:
   m_ObjectHideFlags: 0
@@ -6083,6 +6352,189 @@ Transform:
   m_Children: []
   m_Father: {fileID: 455803785}
   m_RootOrder: 3
+--- !u!1 &1183001030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1183001031}
+  - 61: {fileID: 1183001033}
+  - 61: {fileID: 1183001032}
+  - 114: {fileID: 1183001040}
+  - 114: {fileID: 1183001039}
+  - 114: {fileID: 1183001038}
+  - 114: {fileID: 1183001037}
+  - 114: {fileID: 1183001036}
+  - 114: {fileID: 1183001035}
+  - 114: {fileID: 1183001034}
+  m_Layer: 0
+  m_Name: Dialog Area 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1183001031
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1183001030}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.6400001, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 705665876}
+  m_RootOrder: 1
+--- !u!61 &1183001032
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1183001030}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -5.08005714, y: -.312304497}
+  serializedVersion: 2
+  m_Size: {x: 2.06151581, y: .906103134}
+--- !u!61 &1183001033
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1183001030}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -2.81382918, y: -1.15417671}
+  serializedVersion: 2
+  m_Size: {x: 6.62765884, y: 2.70177722}
+--- !u!114 &1183001034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1183001030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c0c69be65c66d4788f97d041fc9512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc_name: Tutorial
+  NPC: {fileID: 0}
+  MainCharacter: {fileID: 0}
+  message_dialog:
+  - <Tutorial> Explain how to attack here!!!
+  - 
+  talking_player: {fileID: 0}
+--- !u!114 &1183001035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1183001030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c0c69be65c66d4788f97d041fc9512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc_name: Suni
+  NPC: {fileID: 0}
+  MainCharacter: {fileID: 0}
+  message_dialog:
+  - What are you?!
+  - What are you?! Why are you following me?!
+  - What are you?! Why are you following me?! Get away!
+  talking_player: {fileID: 0}
+--- !u!114 &1183001036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1183001030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c0c69be65c66d4788f97d041fc9512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc_name: ???
+  NPC: {fileID: 0}
+  MainCharacter: {fileID: 0}
+  message_dialog:
+  - (Squeak!)
+  talking_player: {fileID: 0}
+--- !u!114 &1183001037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1183001030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c0c69be65c66d4788f97d041fc9512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc_name: Suni
+  NPC: {fileID: 0}
+  MainCharacter: {fileID: 0}
+  message_dialog:
+  - '...'
+  talking_player: {fileID: 0}
+--- !u!114 &1183001038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1183001030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c0c69be65c66d4788f97d041fc9512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc_name: ???
+  NPC: {fileID: 0}
+  MainCharacter: {fileID: 0}
+  message_dialog:
+  - (Squeak?)
+  talking_player: {fileID: 0}
+--- !u!114 &1183001039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1183001030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c0c69be65c66d4788f97d041fc9512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc_name: Suni
+  NPC: {fileID: 0}
+  MainCharacter: {fileID: 0}
+  message_dialog:
+  - '...'
+  talking_player: {fileID: 0}
+--- !u!114 &1183001040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1183001030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a814e0e94df51b34ca0168728b989184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DummyNPCs: []
+  istalking: 0
+  isconversationdone: 0
+  count: 0
+  has_started: 1
 --- !u!1 &1196897159
 GameObject:
   m_ObjectHideFlags: 0
@@ -6508,7 +6960,7 @@ Transform:
   m_LocalScale: {x: .00563770486, y: .00563770533, z: .00563770533}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!114 &1347851053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6576,7 +7028,7 @@ Transform:
   - {fileID: 1699610283}
   - {fileID: 754336057}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &1396579679
 GameObject:
   m_ObjectHideFlags: 0
@@ -7653,7 +8105,7 @@ Transform:
   - {fileID: 221488372}
   - {fileID: 2086111622}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1635512720
 GameObject:
   m_ObjectHideFlags: 0
@@ -8498,7 +8950,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &1803465628
 GameObject:
   m_ObjectHideFlags: 0
