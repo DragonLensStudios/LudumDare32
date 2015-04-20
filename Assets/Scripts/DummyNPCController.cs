@@ -42,6 +42,8 @@ public class DummyNPCController : MonoBehaviour {
 	{
 		istalking = false;
 		count = 0;
+		col.gameObject.GetComponent<InteractionNPC> ().dialogPanel.SetActive (false);
+		col.gameObject.GetComponent<InteractionNPC>().dummyset = false;
 	}
 
 	void Start () {
