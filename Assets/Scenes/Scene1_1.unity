@@ -3353,17 +3353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206cd337101bdea49b1a22526fe44439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Health: 0
-  m_Attack: 0
-  m_Sprite: {fileID: 0}
-  target: {fileID: 0}
-  attack_delay: 1
-  total_attack_time: 0
-  sprite: {fileID: 0}
-  sightRadius: 0
-  lastSeenLocation: {x: 0, y: 0, z: 0}
-  targetLocation: {x: 0, y: 0, z: 0}
-  maxMovementSpeed: 50
 --- !u!61 &603759468
 BoxCollider2D:
   m_ObjectHideFlags: 0
