@@ -4471,6 +4471,22 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -13.6520004
       objectReference: {fileID: 0}
+    - target: {fileID: 482846, guid: 1eded6e8d0c2df14398c673735a5a472, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -13.1239996
+      objectReference: {fileID: 0}
+    - target: {fileID: 472420, guid: 1eded6e8d0c2df14398c673735a5a472, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -12.0100002
+      objectReference: {fileID: 0}
+    - target: {fileID: 472420, guid: 1eded6e8d0c2df14398c673735a5a472, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .736463428
+      objectReference: {fileID: 0}
+    - target: {fileID: 496454, guid: 1eded6e8d0c2df14398c673735a5a472, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .727499425
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1eded6e8d0c2df14398c673735a5a472, type: 2}
   m_IsPrefabParent: 0
@@ -6672,6 +6688,8 @@ GameObject:
   - 114: {fileID: 1183001036}
   - 114: {fileID: 1183001035}
   - 114: {fileID: 1183001034}
+  - 114: {fileID: 1183001042}
+  - 114: {fileID: 1183001041}
   m_Layer: 0
   m_Name: Dialog Area 2
   m_TagString: Untagged
@@ -6732,7 +6750,8 @@ MonoBehaviour:
   NPC: {fileID: 0}
   MainCharacter: {fileID: 0}
   message_dialog:
-  - <Tutorial> Explain how to attack here!!!
+  - <Tutorial> If you hadn't found out how you moved to get here! Move by using WASD
+    or the Arrow Keys.
   - 
   talking_player: {fileID: 0}
 --- !u!114 &1183001035
@@ -6838,6 +6857,47 @@ MonoBehaviour:
   isconversationdone: 0
   count: 0
   has_started: 1
+--- !u!114 &1183001041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1183001030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c0c69be65c66d4788f97d041fc9512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc_name: Tutorial
+  NPC: {fileID: 0}
+  MainCharacter: {fileID: 0}
+  message_dialog:
+  - <Tutorial> In this game the trigger button is Spacebar, so if you would like to
+    open a chest or talk to somebody. Press Space!
+  - <prototype> also if for some reason it skips a line, pressing spacebar will reset
+    the lines.
+  talking_player: {fileID: 0}
+--- !u!114 &1183001042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1183001030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c0c69be65c66d4788f97d041fc9512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc_name: Kumi
+  NPC: {fileID: 0}
+  MainCharacter: {fileID: 0}
+  message_dialog:
+  - <Tutorial> Later on in the game you will need to use me to activate and deactivate
+    triggers, I also am your best power source!
+  - <Tutorial> If you right click somewhere, you can move me to that location.
+  - <Tutorial> While I'm moving you can use the numbers 1, 2, 3, or 4 to use one of
+    my weather elements for specific triggers in the game, or for units.
+  talking_player: {fileID: 0}
 --- !u!1 &1196897159
 GameObject:
   m_ObjectHideFlags: 0

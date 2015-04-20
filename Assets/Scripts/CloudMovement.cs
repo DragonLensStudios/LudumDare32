@@ -78,7 +78,7 @@ public class CloudMovement : MonoBehaviour {
 			//Instantiate (tornado, transform.position, Quaternion.identity);
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(tornado, transform.position, transform.rotation);
-				Destroy(genClone, .8f);
+				Destroy(genClone, 2f);
 			}
 
 
@@ -91,7 +91,7 @@ public class CloudMovement : MonoBehaviour {
 			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(explosion, transform.position, transform.rotation);
-				Destroy(genClone, 1f);
+				Destroy(genClone, 2f);
 			}
 			//if(explosionClone = this.transform.position);
 			
@@ -102,7 +102,7 @@ public class CloudMovement : MonoBehaviour {
 			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(water, transform.position, transform.rotation);
-				Destroy(genClone, .5f);
+				Destroy(genClone, 2f);
 			}
 			//if(explosionClone = this.transform.position);
 			
@@ -113,7 +113,7 @@ public class CloudMovement : MonoBehaviour {
 			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(lightning, transform.position, transform.rotation);
-				Destroy(genClone, 3f);
+				Destroy(genClone, 2f);
 			}
 			//if(explosionClone = this.transform.position);
 			
