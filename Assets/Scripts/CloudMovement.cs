@@ -4,7 +4,10 @@ using System.Collections;
 public class CloudMovement : MonoBehaviour {
 
 	public GameObject explosion;
-	private GameObject explosionClone;
+	public GameObject tornado;
+	public GameObject water;
+	public GameObject lightning;
+
 
 	public bool movingCloud;
 	public Transform target;
@@ -15,15 +18,31 @@ public class CloudMovement : MonoBehaviour {
 	private Vector3 mousePosition;
 	private GameObject Slime;
 	public SlimeisHit Slime_Hit;
-	public int cloudDamage;
+	public int cloudDamageExplosion;
+	
+	public int cloudDamageTornado;
+	
+	public int cloudDamageWater;
+	
+	public int cloudDamageLightning;
 	public bool isAttacking;
 	public bool isColliding;
+
+
+
+	private GameObject tornadoClone;
+	private GameObject ExplosionClone;
+	private GameObject WaterClone;
+	private GameObject LightningClone;
+
 
 	// Use this for initialization
 	void Start () {
 		mousePosition = transform.position;
-		cloudDamage = 3;
-
+		cloudDamageExplosion = 3;
+		cloudDamageTornado = 2;
+		cloudDamageWater = 4;
+		cloudDamageLightning = 5;
 	}
 
 	// Update is called once per frame
@@ -53,16 +72,43 @@ public class CloudMovement : MonoBehaviour {
 		if (Input.GetKeyDown ("1")) {
 			
 			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
-			Instantiate (explosion, transform.position, Quaternion.identity);
+			//Instantiate (tornado, transform.position, Quaternion.identity);
+
+			tornadoClone = (GameObject) Instantiate(tornado, transform.position, transform.rotation);
+			Destroy(tornadoClone, .8f);
+
+
+
 			//if(explosionClone = this.transform.position);
 
 		}
 
+		if (Input.GetKeyDown ("2")) {
+			
+			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
+			ExplosionClone = (GameObject) Instantiate(explosion, transform.position, transform.rotation);
+			Destroy(ExplosionClone, 1f);
+			//if(explosionClone = this.transform.position);
+			
+		}
 
+		if (Input.GetKeyDown ("3")) {
+			
+			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
+			WaterClone = (GameObject) Instantiate(water, transform.position, transform.rotation);
+			Destroy(WaterClone, .5f);
+			//if(explosionClone = this.transform.position);
+			
+		}
 
-
-
-
+		if (Input.GetKeyDown ("4")) {
+			
+			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
+			LightningClone = (GameObject) Instantiate(lightning, transform.position, transform.rotation);
+			Destroy(LightningClone, 3f);
+			//if(explosionClone = this.transform.position);
+			
+		}
 
 
 
@@ -107,8 +153,23 @@ public class CloudMovement : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D col)
 	{	
 		if (Input.GetKeyDown ("1")) { 
-				Slime_Hit.health -= cloudDamage;
+				Slime_Hit.health -= cloudDamageTornado;
 			}
+		if (Input.GetKeyDown ("2")) { 
+			Slime_Hit.health -= cloudDamageExplosion;
+		}
+		if (Input.GetKeyDown ("3")) { 
+			Slime_Hit.health -= cloudDamageWater;
+		}
+		if (Input.GetKeyDown ("4")) { 
+			Slime_Hit.health -= cloudDamageLightning;
+		}
 
+	}
+
+
+	void DestroyAnimation()
+	{
+		Destroy (gameObject);
 	}
 }
