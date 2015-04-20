@@ -15,7 +15,7 @@ public class PlayerCast : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		if (Input.GetKeyDown ("1")) {
+		if (Input.GetKeyDown ("1") || Input.GetKeyDown ("2")|| Input.GetKeyDown ("3")|| Input.GetKeyDown ("4")) {
 			isCasting = true;
 		} else {
 			isCasting = false;
@@ -25,13 +25,13 @@ public class PlayerCast : MonoBehaviour {
 			Debug.Log ("Set trigger");
 		}
 
-		if (Input.GetButton ("Fire1")) {
+		/*if (Input.GetButton ("Fire1")) {
 			isAttacking = true;
 		} else {
 			isAttacking = false;
-		}
+		}*/
 			
-		anim.SetBool ("isAttacking", isAttacking);
+		//anim.SetBool ("isAttacking", isAttacking);
 		anim.SetBool ("isCasting", isCasting);
 	}
 }

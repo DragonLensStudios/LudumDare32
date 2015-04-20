@@ -7,11 +7,13 @@ public class SlimeisHit : MonoBehaviour {
 	public Animator anim;
 	public GameObject Slime;
 	public bool attacked;
+	public int health;
+	public PlayerAttack player;
 
 	void Start(){
 
 		anim = GetComponent<Animator> ();
-		Slime = this.gameObject;
+		Slime = gameObject;
 
 	}
 
@@ -20,6 +22,17 @@ public class SlimeisHit : MonoBehaviour {
 	{
 
 			anim.SetBool("isHit", attacked);
+
+
+	}
+
+	void Update()
+	{
+
+		if (health <= 0) {
+			Debug.Log ("Dead");
+			GameObject.Destroy(gameObject);
+		}
 	}
 	
 }

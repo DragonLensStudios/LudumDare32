@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Fader
   - monster
+  - DialogPanel
+  - HasDialog
   layers:
   - Default
   - TransparentFX
