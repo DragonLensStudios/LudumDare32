@@ -2086,10 +2086,10 @@ GameObject:
   - 114: {fileID: 422107575}
   - 58: {fileID: 422107576}
   - 50: {fileID: 422107577}
-  - 114: {fileID: 422107578}
   - 61: {fileID: 422107579}
   - 114: {fileID: 422107580}
   - 114: {fileID: 422107581}
+  - 114: {fileID: 422107578}
   m_Layer: 0
   m_Name: Suni
   m_TagString: Player
@@ -2200,14 +2200,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 422107571}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a7d4b55a412fd7418770c1957ad6815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 422107574}
+  target: {fileID: 0}
   attacked: 0
-  isUser: {fileID: 422107571}
+  isUser: {fileID: 0}
   Slime: {fileID: 0}
   slimeHealth: 0
   playerSwordDamage: 0
