@@ -201,13 +201,13 @@ public class Monster : MonoBehaviour
 	void checkSight(){
 		Vector3 tar = target.transform.position;
 		float dist = Vector3.Distance(tar, this.transform.position);
-		Debug.Log(dist);
+//		Debug.Log(dist);
 		if ( dist <= sightRadius)
 		{
 
 			RaycastHit2D hit = Physics2D.Linecast(this.transform.position,target.transform.position);
-			Debug.Log(hit.transform.position);
-			Debug.Log(target.transform.position);
+			//Debug.Log(hit.transform.position);
+			//Debug.Log(target.transform.position);
 			if(hit.transform.position == target.transform.position){
 				state = enemy_states.E_CHASING;
 				lastSeenLocation = hit.transform.position;
@@ -216,7 +216,7 @@ public class Monster : MonoBehaviour
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
-		Debug.Log("Monster Collision");
+	//	Debug.Log("Monster Collision");
 		moving = false;
 		state = enemy_states.E_IDLE;
 	}

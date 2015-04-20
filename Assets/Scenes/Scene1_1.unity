@@ -544,6 +544,7 @@ GameObject:
   - 114: {fileID: 603759465}
   - 114: {fileID: 603759467}
   - 50: {fileID: 603759466}
+  - 61: {fileID: 603759468}
   m_Layer: 2
   m_Name: Slime 2
   m_TagString: monster
@@ -559,11 +560,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 603759460}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -1.44091797, y: 1.90429688}
+  m_Offset: {x: 1, y: 1}
   serializedVersion: 2
-  m_Size: {x: 23.8616543, y: 25.9145966}
+  m_Size: {x: 80, y: 90}
 --- !u!95 &603759462
 Animator:
   serializedVersion: 3
@@ -665,6 +666,19 @@ MonoBehaviour:
   sightRadius: 0
   lastSeenLocation: {x: 0, y: 0, z: 0}
   targetLocation: {x: 0, y: 0, z: 0}
+--- !u!61 &603759468
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 603759460}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -1.44091797, y: 1.90429688}
+  serializedVersion: 2
+  m_Size: {x: 23.8616543, y: 25.9145966}
 --- !u!1 &662915828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,6 +1319,7 @@ GameObject:
   - 212: {fileID: 1347851051}
   - 95: {fileID: 1347851050}
   - 114: {fileID: 1347851053}
+  - 58: {fileID: 1347851054}
   m_Layer: 0
   m_Name: Cumulus
   m_TagString: Untagged
@@ -1383,8 +1398,23 @@ MonoBehaviour:
   target: {fileID: 422107574}
   horizontalSpeed: 0
   verticalSpeed: 0
-  Slime: {fileID: 0}
+  Slime_Hit: {fileID: 0}
   cloudDamage: 0
+  isAttacking: 0
+  isColliding: 0
+--- !u!58 &1347851054
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1347851049}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 32
 --- !u!1 &1487044988
 GameObject:
   m_ObjectHideFlags: 0
