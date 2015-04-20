@@ -15,6 +15,7 @@ public class InteractionNPC : MonoBehaviour {
 	string charName;
 	public string dialogString;
 	public GameObject dialogPanel;
+	public Text nametagPanel;
 	
 	
 	int clickCount;
@@ -26,6 +27,7 @@ public class InteractionNPC : MonoBehaviour {
 		hasDialogBox = GameObject.FindGameObjectsWithTag ("HasDialog");
 		dialogText = GameObject.Find("DialogText").GetComponent<Text>();
 		charName = PlayerPrefs.GetString ("charName");
+		nametagPanel = GameObject.Find("NameTagText").GetComponent<Text>();
 
 		dialogPanel.SetActive (false);
 		clickCount = 0;
@@ -75,11 +77,13 @@ public class InteractionNPC : MonoBehaviour {
 //			Debug.Log("NPC FOUND WITH DIALOG BOX");
 			if (clickCount < NPCC.message_dialog.Count)
 			{
+
 				dialogText.text = NPCC.message_dialog[clickCount];
-	
+				nametagPanel.GetComponent<Text>().text = NPCC.npc_name;
 			}
 			else if (clickCount == NPCC.message_dialog.Count)
 			{
+				nametagPanel.GetComponent<Text>().text = null;
 				dialogPanel.SetActive(false);
 				clickCount = 0;
 			}	

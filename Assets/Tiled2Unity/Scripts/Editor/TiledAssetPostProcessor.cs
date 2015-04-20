@@ -79,7 +79,7 @@ namespace Tiled2Unity
                     }
                     else if (IsTiled2UnityPrefab(imported))
                     {
-                        Debug.Log(string.Format("Imported prefab from Tiled map editor: {0}", imported));
+//                        Debug.Log(string.Format("Imported prefab from Tiled map editor: {0}", imported));
                     }
                 }
             }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class NPCController : MonoBehaviour {
 
+	public string npc_name;
 	public GameObject NPC;
 	public GameObject MainCharacter;
 	public List<string> message_dialog;
