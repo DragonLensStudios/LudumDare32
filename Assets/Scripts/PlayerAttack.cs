@@ -17,7 +17,6 @@ public class PlayerAttack : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		playerSwordDamage = 1;
 		slimeHealth = 2;
- 
 	}
 	
 
@@ -25,7 +24,7 @@ public class PlayerAttack : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D col)
 	{
 
-		if (Input.GetButton ("Fire1") && col.gameObject.tag == "monster") {
+		if (Input.GetButton ("Fire1") && col.gameObject.tag == "Monster") {
 
 			attacked = true;
 
