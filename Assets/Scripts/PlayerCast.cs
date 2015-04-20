@@ -15,7 +15,7 @@ public class PlayerCast : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		if (Input.GetKeyDown ("1")) {
+		if (Input.GetKeyDown ("1") || Input.GetKeyDown ("2")|| Input.GetKeyDown ("3")|| Input.GetKeyDown ("4")) {
 			isCasting = true;
 		} else {
 			isCasting = false;

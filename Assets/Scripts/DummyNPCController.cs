@@ -7,7 +7,7 @@ public class DummyNPCController : MonoBehaviour {
 	public bool istalking = false; //Needs to be private.
 	public bool isconversationdone; //Needs to be private.
 	public int count = 0; //Needs to be private.
-	public bool has_started;
+	public bool has_started = true;
 	// Use this for initialization
 	public void Finish (){
 		istalking = false;
