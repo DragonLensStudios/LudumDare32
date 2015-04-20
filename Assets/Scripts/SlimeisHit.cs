@@ -13,7 +13,7 @@ public class SlimeisHit : MonoBehaviour {
 	void Start(){
 
 		anim = GetComponent<Animator> ();
-		Slime = this.gameObject;
+		Slime = gameObject;
 
 	}
 

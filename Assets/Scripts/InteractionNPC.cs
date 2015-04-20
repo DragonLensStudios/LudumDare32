@@ -70,8 +70,8 @@ public class InteractionNPC : MonoBehaviour {
 	void Update()
 	{
 
-//		if (NPCC.gameObject.tag == "HasDialog")
-//		{
+		if (NPCC != null)
+		{
 //			Debug.Log("NPC FOUND WITH DIALOG BOX");
 			if (clickCount < NPCC.message_dialog.Count)
 			{
@@ -84,7 +84,7 @@ public class InteractionNPC : MonoBehaviour {
 				clickCount = 0;
 			}	
 //			if(NPC.name == "Lumi")
-//		}	{
+		}	
 
 	}
 }
