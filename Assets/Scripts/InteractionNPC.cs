@@ -7,7 +7,7 @@ public class InteractionNPC : MonoBehaviour {
 	
 	public NPCController NPCC;
 	public GameObject MainCharacter;
-	public GameObject[] hasDialogBox;
+	public List<GameObject> hasDialogBox;
 	public List<string> message_dialog;
 	
 	
@@ -16,6 +16,8 @@ public class InteractionNPC : MonoBehaviour {
 	public string dialogString;
 	public GameObject dialogPanel;
 	public Text nametagPanel;
+	public bool dummyset = false;
+	public DummyNPCController Dummy;
 	
 	
 	int clickCount;
@@ -24,7 +26,7 @@ public class InteractionNPC : MonoBehaviour {
 	void Start () {
 		MainCharacter = gameObject;
 		dialogPanel = GameObject.FindGameObjectWithTag ("DialogPanel");
-		hasDialogBox = GameObject.FindGameObjectsWithTag ("HasDialog");
+		hasDialogBox.AddRange(GameObject.FindGameObjectsWithTag ("HasDialog")) ;
 		dialogText = GameObject.Find("DialogText").GetComponent<Text>();
 		charName = PlayerPrefs.GetString ("charName");
 		nametagPanel = GameObject.Find("NameTagText").GetComponent<Text>();
@@ -36,17 +38,18 @@ public class InteractionNPC : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnCollisionStay2D (Collision2D col) {
-		if (col.gameObject.tag == "HasDialog")
-		{
-			Debug.Log ("Collided");
-			NPCC = col.gameObject.GetComponent<NPCController>();
-			col.gameObject.GetComponent<NPCController> ().MainCharacter = MainCharacter;
-			if (Input.GetButton("Jump"))
+		if(!dummyset){
+			if (col.gameObject.tag == "HasDialog")
 			{
-				dialogPanel.SetActive (true);
+				Debug.Log ("Collided");
+				NPCC = col.gameObject.GetComponent<NPCController>();
+				col.gameObject.GetComponent<NPCController> ().MainCharacter = MainCharacter;
+				if (Input.GetButton("Jump"))
+				{
+					dialogPanel.SetActive (true);
+				}
 			}
 		}
-		
 		
 		//		
 		//if (col.gameObject == NPC) {
@@ -61,6 +64,7 @@ public class InteractionNPC : MonoBehaviour {
 		dialogPanel.SetActive (false);
 		dialogText.text = "";
 		NPCC = null;
+		clickCount = 0;
 		
 	}
 	
@@ -68,7 +72,12 @@ public class InteractionNPC : MonoBehaviour {
 		clickCount++;
 		Debug.Log ("Clicked");
 	}
-	
+	public void startdummy(NPCController dummynpc, DummyNPCController dummy){
+		dummyset = true;
+		NPCC = dummynpc;
+		Dummy = dummy;
+		dialogPanel.SetActive (true);
+	}
 	void Update()
 	{
 		
@@ -83,9 +92,17 @@ public class InteractionNPC : MonoBehaviour {
 			}
 			else if (clickCount == NPCC.message_dialog.Count)
 			{
+
 				nametagPanel.GetComponent<Text>().text = null;
 				dialogPanel.SetActive(false);
 				clickCount = 0;
+
+				if(dummyset){
+					dummyset = false;
+					NPCC = null;
+					Dummy.Finish();
+					Dummy = null;
+				}
 			}	
 			//			if(NPC.name == "Lumi")
 		}	

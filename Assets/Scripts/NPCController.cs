@@ -18,5 +18,4 @@ public class NPCController : MonoBehaviour {
 		NPC = gameObject;
 	}
 	
-	
 }

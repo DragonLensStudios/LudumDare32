@@ -10,6 +10,7 @@ public class CloudMovement : MonoBehaviour {
 
 
 	public bool movingCloud;
+	public bool atplayer;
 	public Transform target;
 	bool top, right, left, bottom;
 	public float horizontalSpeed;
@@ -29,7 +30,7 @@ public class CloudMovement : MonoBehaviour {
 	public bool isColliding;
 
 
-
+	private GameObject genClone;
 	private GameObject tornadoClone;
 	private GameObject ExplosionClone;
 	private GameObject WaterClone;
@@ -48,7 +49,7 @@ public class CloudMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(movingCloud == true) {
+		if(movingCloud == true && !atplayer) {
 
 			Pos = target.position;
 			Pos.x = target.position.x;
@@ -64,6 +65,8 @@ public class CloudMovement : MonoBehaviour {
 		if (Input.GetButton ("Fire2")) {
 			movingCloud = false;
 			mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			iTween.Stop(gameObject);
+
 			iTween.MoveTo (gameObject, iTween.Hash ("position", mousePosition, "time", 2.5f, "easetype", "linear"));
 		} else {
 			movingCloud = true;
@@ -73,10 +76,10 @@ public class CloudMovement : MonoBehaviour {
 			
 			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
 			//Instantiate (tornado, transform.position, Quaternion.identity);
-
-			tornadoClone = (GameObject) Instantiate(tornado, transform.position, transform.rotation);
-			Destroy(tornadoClone, .8f);
-
+			if(genClone == null){
+				genClone = (GameObject) Instantiate(tornado, transform.position, transform.rotation);
+				Destroy(genClone, .8f);
+			}
 
 
 			//if(explosionClone = this.transform.position);
@@ -86,8 +89,10 @@ public class CloudMovement : MonoBehaviour {
 		if (Input.GetKeyDown ("2")) {
 			
 			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
-			ExplosionClone = (GameObject) Instantiate(explosion, transform.position, transform.rotation);
-			Destroy(ExplosionClone, 1f);
+			if(genClone == null){
+				genClone = (GameObject) Instantiate(explosion, transform.position, transform.rotation);
+				Destroy(genClone, 1f);
+			}
 			//if(explosionClone = this.transform.position);
 			
 		}
@@ -95,8 +100,10 @@ public class CloudMovement : MonoBehaviour {
 		if (Input.GetKeyDown ("3")) {
 			
 			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
-			WaterClone = (GameObject) Instantiate(water, transform.position, transform.rotation);
-			Destroy(WaterClone, .5f);
+			if(genClone == null){
+				genClone = (GameObject) Instantiate(water, transform.position, transform.rotation);
+				Destroy(genClone, .5f);
+			}
 			//if(explosionClone = this.transform.position);
 			
 		}
@@ -104,8 +111,10 @@ public class CloudMovement : MonoBehaviour {
 		if (Input.GetKeyDown ("4")) {
 			
 			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
-			LightningClone = (GameObject) Instantiate(lightning, transform.position, transform.rotation);
-			Destroy(LightningClone, 3f);
+			if(genClone == null){
+				genClone = (GameObject) Instantiate(lightning, transform.position, transform.rotation);
+				Destroy(genClone, 3f);
+			}
 			//if(explosionClone = this.transform.position);
 			
 		}
@@ -132,7 +141,10 @@ public class CloudMovement : MonoBehaviour {
 
 			Slime_Hit = col.gameObject.GetComponent<SlimeisHit> ();
 
-
+			if(col.tag == "Player"){
+				Debug.Log("stopping");
+				atplayer = true;
+			}
 				//Destroy(explosionClone);
 		
 		}
@@ -144,7 +156,10 @@ public class CloudMovement : MonoBehaviour {
 			
 			Slime_Hit = null;
 			
-			
+			if(col.tag == "Player"){
+				Debug.Log("moving");
+				atplayer = false;
+			}
 			//Destroy(explosionClone);
 			
 		}
