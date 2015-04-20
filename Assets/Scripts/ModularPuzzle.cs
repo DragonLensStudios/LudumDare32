@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
+
 
 
 public class ModularPuzzle : MonoBehaviour {
@@ -53,13 +54,13 @@ public class ModularPuzzle : MonoBehaviour {
 		
 	}
 
-
 	public void InspectorChange()
 	{
 		//BoxPuzzle();
 		//Debug.Log("Inspector Changed!");
 	}
 	// Use this for initialization
+
 	void Start () {
 		player_object = GameObject.FindGameObjectWithTag("Player");
 		puzzle_object = gameObject;

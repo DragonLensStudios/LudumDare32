@@ -26,6 +26,7 @@ public class InteractionNPC : MonoBehaviour {
 		hasDialogBox = GameObject.FindGameObjectsWithTag ("HasDialog");
 		dialogText = GameObject.Find("DialogText").GetComponent<Text>();
 		charName = PlayerPrefs.GetString ("charName");
+
 		dialogPanel.SetActive (false);
 		clickCount = 0;
 		
@@ -69,21 +70,21 @@ public class InteractionNPC : MonoBehaviour {
 	void Update()
 	{
 
-//		if (NPCC.gameObject.tag == "HasDialog")
-//		{
+		if (NPCC != null)
+		{
 //			Debug.Log("NPC FOUND WITH DIALOG BOX");
 			if (clickCount < NPCC.message_dialog.Count)
 			{
 				dialogText.text = NPCC.message_dialog[clickCount];
-				if (clickCount == NPCC.message_dialog.Count - 1)
-				{
-					dialogPanel.SetActive(false);
-					clickCount = 0;
-				}		
+	
 			}
-			
+			else if (clickCount == NPCC.message_dialog.Count)
+			{
+				dialogPanel.SetActive(false);
+				clickCount = 0;
+			}	
 //			if(NPC.name == "Lumi")
-//		}	{
+		}	
 
 	}
 }
