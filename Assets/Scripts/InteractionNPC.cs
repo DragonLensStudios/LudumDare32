@@ -1,43 +1,67 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class InteractionNPC : MonoBehaviour {
 	
-	public GameObject NPC;
+	public NPCController NPCC;
 	public GameObject MainCharacter;
-	public bool NPCZONE;
+	public GameObject[] hasDialogBox;
+	public List<string> message_dialog;
 	
 	
 	public Text dialogText;
 	string charName;
 	public string dialogString;
 	public GameObject dialogPanel;
+	public Text nametagPanel;
 	
 	
 	int clickCount;
 	
 	// Use this for initialization
 	void Start () {
-		MainCharacter = this.gameObject;
+		MainCharacter = gameObject;
 		dialogPanel = GameObject.FindGameObjectWithTag ("DialogPanel");
+		hasDialogBox = GameObject.FindGameObjectsWithTag ("HasDialog");
 		dialogText = GameObject.Find("DialogText").GetComponent<Text>();
 		charName = PlayerPrefs.GetString ("charName");
+		nametagPanel = GameObject.Find("NameTagText").GetComponent<Text>();
+		
 		dialogPanel.SetActive (false);
 		clickCount = 0;
 		
 	}
 	
 	// Update is called once per frame
-	void OnCollisionEnter2D (Collision2D col) {
-		Debug.Log ("Collided");
-		NPC = col.gameObject.GetComponent<NPCController>().NPC;
-		col.gameObject.GetComponent<NPCController> ().MainCharacter = MainCharacter;
-		if (col.gameObject == NPC) {
-			NPCZONE = true;
-		} else {
-			NPCZONE = false;
+	void OnCollisionStay2D (Collision2D col) {
+		if (col.gameObject.tag == "HasDialog")
+		{
+			Debug.Log ("Collided");
+			NPCC = col.gameObject.GetComponent<NPCController>();
+			col.gameObject.GetComponent<NPCController> ().MainCharacter = MainCharacter;
+			if (Input.GetButton("Jump"))
+			{
+				dialogPanel.SetActive (true);
+			}
 		}
+		
+		
+		//		
+		//if (col.gameObject == NPC) {
+		//			NPCZONE = true;
+		//		} else {
+		//			NPCZONE = false;
+		//		}
+	}
+	
+	void OnCollisionExit2D (Collision2D col) 
+	{
+		dialogPanel.SetActive (false);
+		dialogText.text = "";
+		NPCC = null;
+		
 	}
 	
 	public void OnClick(){
@@ -48,46 +72,27 @@ public class InteractionNPC : MonoBehaviour {
 	void Update()
 	{
 		
-		
-		
-		
-		
-		if (NPCZONE == true) {
-			
-			if (Input.GetButton("Jump")) {
-				dialogPanel.SetActive (true);
-			}
-			
-			if(NPC.name == "Lumi")
+		if (NPCC != null)
+		{
+			//			Debug.Log("NPC FOUND WITH DIALOG BOX");
+			if (clickCount < NPCC.message_dialog.Count)
 			{
 				
-				
-				
-				
-				dialogText.text = dialogString;
-				
-				
-				if(clickCount == 0)
-					dialogString = ("Suni!!! What are you doing here? Is that a cloud following you? I can't Believe it! you have really been given this opportunity!\n\nNO FAIR !?!? Why Don't I ever get this Opportunity!");
-				if(clickCount == 1)	
-					dialogString = ("Anyways, you should go to town because some people there wanted to see you.");
-				if(clickCount == 2)
-					dialogString = ("They were wandering and asking questions for some strange reason.");
-				if(clickCount == 3)
-					dialogString = ("Is everything okay, Suni?");
-				if (clickCount == 4) {
-					dialogString = ("Press Enter To Continue....");
-					clickCount = 0;
-					dialogPanel.SetActive(false);
-				}
-				
+				dialogText.text = NPCC.message_dialog[clickCount];
+				nametagPanel.GetComponent<Text>().text = NPCC.npc_name;
 			}
-			
-			
-			
-		}
+			else if (clickCount == NPCC.message_dialog.Count)
+			{
+				nametagPanel.GetComponent<Text>().text = null;
+				dialogPanel.SetActive(false);
+				clickCount = 0;
+			}	
+			//			if(NPC.name == "Lumi")
+		}	
+		
 	}
 }
+
 
 
 
