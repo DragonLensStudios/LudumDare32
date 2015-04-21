@@ -79,6 +79,7 @@ public class CloudMovement : MonoBehaviour {
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(tornado, transform.position, transform.rotation);
 				Destroy(genClone, 2f);
+				GetComponents<AudioSource>()[3].Play();
 			}
 
 
@@ -92,6 +93,7 @@ public class CloudMovement : MonoBehaviour {
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(explosion, transform.position, transform.rotation);
 				Destroy(genClone, 2f);
+				GetComponents<AudioSource>()[0].Play();
 			}
 			//if(explosionClone = this.transform.position);
 			
@@ -103,6 +105,7 @@ public class CloudMovement : MonoBehaviour {
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(water, transform.position, transform.rotation);
 				Destroy(genClone, 2f);
+				GetComponents<AudioSource>()[2].Play();
 			}
 			//if(explosionClone = this.transform.position);
 			
@@ -114,6 +117,7 @@ public class CloudMovement : MonoBehaviour {
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(lightning, transform.position, transform.rotation);
 				Destroy(genClone, 2f);
+				GetComponents<AudioSource>()[1].Play();
 			}
 			//if(explosionClone = this.transform.position);
 			

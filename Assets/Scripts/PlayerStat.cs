@@ -14,7 +14,8 @@ public class PlayerStat : MonoBehaviour {
 		playerHealth -= damage;
 		if(playerHealth == 0)
 		{
-			//Play game over/death sequence
+
+			Application.LoadLevel("MainMenuScene");
 		}
 	}
 
