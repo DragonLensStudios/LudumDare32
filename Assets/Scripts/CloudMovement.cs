@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-[RequireComponent(typeof(AudioSource))]
+
 public class CloudMovement : MonoBehaviour {
 
 	public GameObject explosion;
@@ -61,11 +61,11 @@ public class CloudMovement : MonoBehaviour {
 			iTween.MoveUpdate (gameObject, iTween.Hash ("position", Pos + Vector3.left * h, "time", 1.5f, "easetype", "linear", "oncomplete", "CloudMoveComplete"));
 			iTween.MoveUpdate (gameObject, iTween.Hash ("position", Pos + Vector3.down * y, "time", 1.5f, "easetype", "linear", "oncomplete", "CloudMoveComplete"));
 		}
-		
+
 		if (Input.GetButton ("Fire2")) {
 			movingCloud = false;
 			mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			iTween.Stop(gameObject);
+			//iTween.Stop(gameObject);
 
 			iTween.MoveTo (gameObject, iTween.Hash ("position", mousePosition, "time", 2.5f, "easetype", "linear"));
 		} else {
@@ -78,7 +78,6 @@ public class CloudMovement : MonoBehaviour {
 			//Instantiate (tornado, transform.position, Quaternion.identity);
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(tornado, transform.position, transform.rotation);
-				GetComponents<AudioSource>()[3].Play();	
 				Destroy(genClone, 2f);
 			}
 
@@ -93,7 +92,6 @@ public class CloudMovement : MonoBehaviour {
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(explosion, transform.position, transform.rotation);
 				Destroy(genClone, 2f);
-				GetComponents<AudioSource>()[0].Play();	
 			}
 			//if(explosionClone = this.transform.position);
 			
@@ -105,7 +103,7 @@ public class CloudMovement : MonoBehaviour {
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(water, transform.position, transform.rotation);
 				Destroy(genClone, 2f);
-				GetComponents<AudioSource>()[2].Play();				}
+			}
 			//if(explosionClone = this.transform.position);
 			
 		}
@@ -116,7 +114,6 @@ public class CloudMovement : MonoBehaviour {
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(lightning, transform.position, transform.rotation);
 				Destroy(genClone, 2f);
-				GetComponents<AudioSource>()[1].Play();
 			}
 			//if(explosionClone = this.transform.position);
 			
@@ -137,10 +134,9 @@ public class CloudMovement : MonoBehaviour {
 		Debug.Log ("The cloud is done moving");
 	}
 
-
+	/*
 	void OnTriggerEnter2D(Collider2D col){
 		{
-
 
 			Slime_Hit = col.gameObject.GetComponent<SlimeisHit> ();
 
@@ -148,10 +144,11 @@ public class CloudMovement : MonoBehaviour {
 				Debug.Log("stopping");
 				atplayer = true;
 			}
+
 				//Destroy(explosionClone);
 		
 		}
-	}
+	}*/
 
 	void OnTriggerExit2D(Collider2D col){
 		{
@@ -160,7 +157,7 @@ public class CloudMovement : MonoBehaviour {
 			Slime_Hit = null;
 			
 			if(col.tag == "Player"){
-				Debug.Log("moving");
+				//Debug.Log("moving");
 				atplayer = false;
 			}
 			//Destroy(explosionClone);
@@ -170,6 +167,15 @@ public class CloudMovement : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D col)
 	{	
+		Slime_Hit = col.gameObject.GetComponent<SlimeisHit> ();
+		
+		if(col.tag == "Player"){
+			//Debug.Log("stopping");
+			atplayer = true;
+		}
+
+
+
 		if (Input.GetKeyDown ("1")) { 
 				Slime_Hit.health -= cloudDamageTornado;
 			}
