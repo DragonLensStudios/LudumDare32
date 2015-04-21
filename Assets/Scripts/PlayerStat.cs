@@ -6,7 +6,7 @@ public class PlayerStat : MonoBehaviour {
 
 	void Start()
 	{
-		playerHealth = 15;
+		playerHealth = 20;
 	}
 
 	public void takeDamage(float damage)
