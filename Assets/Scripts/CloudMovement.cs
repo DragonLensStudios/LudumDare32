@@ -157,7 +157,7 @@ public class CloudMovement : MonoBehaviour {
 			Slime_Hit = null;
 			
 			if(col.tag == "Player"){
-				Debug.Log("moving");
+				//Debug.Log("moving");
 				atplayer = false;
 			}
 			//Destroy(explosionClone);
@@ -170,7 +170,7 @@ public class CloudMovement : MonoBehaviour {
 		Slime_Hit = col.gameObject.GetComponent<SlimeisHit> ();
 		
 		if(col.tag == "Player"){
-			Debug.Log("stopping");
+			//Debug.Log("stopping");
 			atplayer = true;
 		}
 

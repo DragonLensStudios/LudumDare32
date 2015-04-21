@@ -13,6 +13,9 @@ public class Monster : MonoBehaviour
 	enum enemy_states{ E_IDLE, E_MOVING, E_WANDER, E_CHASING, E_ATTACKING, E_DEAD};
 	enemy_states state;
 	public SpriteRenderer sprite;
+	PlayerStat pStat;
+	public int attackSpeed;
+	int attackWait;
 	
 	Animator anim;
 	public float sightRadius;
@@ -44,10 +47,7 @@ public class Monster : MonoBehaviour
 	void heal(int amount){
 		m_Health += amount;
 	}
-	
-	void attack(Player p){ //
-	}
-	
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -55,9 +55,13 @@ public class Monster : MonoBehaviour
 		anim = GetComponent<Animator>();
 		state = enemy_states.E_IDLE;
 		target = GameObject.FindWithTag("Player");
+		pStat = target.GetComponent<PlayerStat>();
 		sightRadius = 1.8f;
 		maxMovementSpeed = 5.0f;
 		moving = false;
+		attackSpeed = 180;
+		m_Attack = 1;
+		attackWait = 0;
 
 		if(target == null)
 			Debug.Log("No Player Object found");
@@ -70,6 +74,9 @@ public class Monster : MonoBehaviour
 	}
 	
 	void logic(){
+		if(attackWait<attackSpeed)
+			attackWait++;
+
 		this.transform.rotation = Quaternion.identity;
 		switch(state){
 		case enemy_states.E_IDLE:
@@ -124,8 +131,8 @@ public class Monster : MonoBehaviour
 			 */
 			checkSight();
 			
-			transform.position = Vector3.Lerp(transform.position, lastSeenLocation, Time.deltaTime*maxMovementSpeed*0.01f);
-			if (Vector3.Distance(transform.position, target.transform.position) < 0.36)
+			transform.position = Vector3.Lerp(transform.position, lastSeenLocation, Time.deltaTime*maxMovementSpeed*0.1f);
+			if (Vector3.Distance(transform.position, target.transform.position) < 0.45)
 			{
 				state = enemy_states.E_ATTACKING;
 			}
@@ -189,6 +196,20 @@ public class Monster : MonoBehaviour
 			/*
 			 * TODO: Add animator functions in here
 			 */ 
+			if(Vector3.Distance(this.transform.position, target.transform.position) < 0.46)
+			{
+				if(attackWait >= attackSpeed)
+				{
+					Debug.Log("Player is being attacked");
+					pStat.takeDamage(m_Attack);
+					attackWait = 0;
+				}
+			}
+			else
+			{
+				state = enemy_states.E_CHASING;
+			}
+
 			break;
 		case enemy_states.E_DEAD:
 			sprite = null;

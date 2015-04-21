@@ -18,7 +18,7 @@ public class DummyNPCController : MonoBehaviour {
 		if (col.gameObject.tag == "Player")
 		{
 			InteractionNPC dialog = col.gameObject.GetComponent<InteractionNPC>();
-			Debug.Log("ONTrigger with " + col.name);
+			//Debug.Log("ONTrigger with " + col.name);
 			step (dialog);
 		}
 
@@ -51,7 +51,7 @@ public class DummyNPCController : MonoBehaviour {
 	}
 
 	void Update (){
-		Debug.Log(gameObject.transform.root.name);
+		//Debug.Log(gameObject.transform.root.name);
 		if (gameObject.transform.root.tag == "Player"){
 			step (gameObject.transform.root.GetComponent<InteractionNPC>());
 		}
