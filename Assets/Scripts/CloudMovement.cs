@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+[RequireComponent(typeof(AudioSource))]
 public class CloudMovement : MonoBehaviour {
 
 	public GameObject explosion;
@@ -78,6 +78,7 @@ public class CloudMovement : MonoBehaviour {
 			//Instantiate (tornado, transform.position, Quaternion.identity);
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(tornado, transform.position, transform.rotation);
+				GetComponents<AudioSource>()[3].Play();	
 				Destroy(genClone, 2f);
 			}
 
@@ -92,6 +93,7 @@ public class CloudMovement : MonoBehaviour {
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(explosion, transform.position, transform.rotation);
 				Destroy(genClone, 2f);
+				GetComponents<AudioSource>()[0].Play();	
 			}
 			//if(explosionClone = this.transform.position);
 			
@@ -103,7 +105,7 @@ public class CloudMovement : MonoBehaviour {
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(water, transform.position, transform.rotation);
 				Destroy(genClone, 2f);
-			}
+				GetComponents<AudioSource>()[2].Play();				}
 			//if(explosionClone = this.transform.position);
 			
 		}
@@ -114,6 +116,7 @@ public class CloudMovement : MonoBehaviour {
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(lightning, transform.position, transform.rotation);
 				Destroy(genClone, 2f);
+				GetComponents<AudioSource>()[1].Play();
 			}
 			//if(explosionClone = this.transform.position);
 			
