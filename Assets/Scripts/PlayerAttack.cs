@@ -9,14 +9,16 @@ public class PlayerAttack : MonoBehaviour {
 	public bool attacked;
 	public GameObject isUser;
 	public SlimeisHit Slime;
+	public RockisHit Rock;
 	public int slimeHealth;
+	public int rockHealth;
 	public int playerSwordDamage;
 	public int damageDeal;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
 		playerSwordDamage = 1;
-		slimeHealth = 2;
+		rockHealth = 2;
  
 	}
 	
@@ -42,8 +44,8 @@ public class PlayerAttack : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col)
 	{
 
-
 		Slime = col.gameObject.GetComponent<SlimeisHit> ();
+		Rock = col.gameObject.GetComponent<RockisHit> ();
 
 	//	if(col.gameObject.tag == ("monster"))
 	//	{
@@ -60,6 +62,11 @@ public class PlayerAttack : MonoBehaviour {
 			Slime.GetComponent<SlimeisHit> ().attacked = true;
 			Slime.GetComponent<SlimeisHit> ().anim.SetBool("isHit", attacked);
 			Slime.GetComponent<SlimeisHit> ().health -= playerSwordDamage;
+
+			Rock.GetComponent<RockisHit> ().attacked = true;
+			Rock.GetComponent<RockisHit> ().anim.SetBool("isHit", attacked);
+			Rock.GetComponent<RockisHit> ().health -= playerSwordDamage;
+
 			Debug.Log ("IM GETTING HERE");
 
 
@@ -67,6 +74,9 @@ public class PlayerAttack : MonoBehaviour {
 
 			Slime.GetComponent<SlimeisHit>().attacked = false;
 			Slime.GetComponent<SlimeisHit> ().anim.SetBool("isHit", attacked);
+
+			Rock.GetComponent<RockisHit>().attacked = false;
+			Rock.GetComponent<RockisHit> ().anim.SetBool("isHit", attacked);
 
 		}
 	}
