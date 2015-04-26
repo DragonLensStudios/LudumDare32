@@ -20,11 +20,6 @@ public class PlayerCast : MonoBehaviour {
 		} else {
 			isCasting = false;
 		}
-		if (Input.GetKeyDown ("0")) {
-			anim.SetTrigger("Death");
-			Debug.Log ("Set trigger");
-		}
-
 		/*if (Input.GetButton ("Fire1")) {
 			isAttacking = true;
 		} else {
@@ -35,3 +30,5 @@ public class PlayerCast : MonoBehaviour {
 		anim.SetBool ("isCasting", isCasting);
 	}
 }
+
+

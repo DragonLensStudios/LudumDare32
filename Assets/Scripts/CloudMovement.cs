@@ -18,7 +18,13 @@ public class CloudMovement : MonoBehaviour {
 	private Vector3 Pos;
 	private Vector3 mousePosition;
 	private GameObject Slime;
+	private GameObject Rock;
+
+
 	public SlimeisHit Slime_Hit;
+	public RockisHit Rock_Hit;
+
+
 	public int cloudDamageExplosion;
 	
 	public int cloudDamageTornado;
@@ -48,7 +54,7 @@ public class CloudMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+			
 		if(movingCloud == true && !atplayer) {
 
 			Pos = target.position;
@@ -159,6 +165,7 @@ public class CloudMovement : MonoBehaviour {
 			
 			
 			Slime_Hit = null;
+			Rock_Hit = null;
 			
 			if(col.tag == "Player"){
 				//Debug.Log("moving");
@@ -172,7 +179,9 @@ public class CloudMovement : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D col)
 	{	
 		Slime_Hit = col.gameObject.GetComponent<SlimeisHit> ();
-		
+		Rock_Hit = col.gameObject.GetComponent<RockisHit> ();
+
+
 		if(col.tag == "Player"){
 			//Debug.Log("stopping");
 			atplayer = true;
@@ -181,16 +190,23 @@ public class CloudMovement : MonoBehaviour {
 
 
 		if (Input.GetKeyDown ("1")) { 
-				Slime_Hit.health -= cloudDamageTornado;
-			}
+
+			Slime_Hit.health -= cloudDamageTornado;
+			Rock_Hit.health -= cloudDamageTornado;
+
+		
+		}
 		if (Input.GetKeyDown ("2")) { 
 			Slime_Hit.health -= cloudDamageExplosion;
+			Rock_Hit.health -= cloudDamageExplosion;
 		}
 		if (Input.GetKeyDown ("3")) { 
 			Slime_Hit.health -= cloudDamageWater;
+			Rock_Hit.health -= cloudDamageWater;
 		}
 		if (Input.GetKeyDown ("4")) { 
 			Slime_Hit.health -= cloudDamageLightning;
+			Rock_Hit.health -= cloudDamageLightning;
 		}
 
 	}
@@ -200,4 +216,6 @@ public class CloudMovement : MonoBehaviour {
 	{
 		Destroy (gameObject);
 	}
+
+
 }

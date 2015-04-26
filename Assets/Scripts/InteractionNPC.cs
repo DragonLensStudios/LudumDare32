@@ -38,17 +38,21 @@ public class InteractionNPC : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnCollisionStay2D (Collision2D col) {
-		if(!dummyset){
-			if (col.gameObject.tag == "HasDialog")
-			{
+		if (!dummyset) {
+			if (col.gameObject.tag == "HasDialog") {
 				Debug.Log ("Collided");
-				NPCC = col.gameObject.GetComponent<NPCController>();
+				NPCC = col.gameObject.GetComponent<NPCController> ();
 				col.gameObject.GetComponent<NPCController> ().MainCharacter = MainCharacter;
-				if (Input.GetButton("Jump"))
-				{
+				if (Input.GetButton ("Jump")) {
 					dialogPanel.SetActive (true);
 				}
 			}
+		} else {
+			dialogPanel.SetActive (false);
+			dialogText.text = "";
+			NPCC = null;
+			clickCount = 0;
+
 		}
 		
 		//		
@@ -58,16 +62,17 @@ public class InteractionNPC : MonoBehaviour {
 		//			NPCZONE = false;
 		//		}
 	}
-	
-	void OnCollisionExit2D (Collision2D col) 
-	{
-		dialogPanel.SetActive (false);
-		dialogText.text = "";
-		NPCC = null;
-		clickCount = 0;
-		
-	}
-	
+
+//	
+//	void OnCollisionExit2D (Collision2D col) 
+//	{
+//		dialogPanel.SetActive (false);
+//		dialogText.text = "";
+//		NPCC = null;
+//		clickCount = 0;
+//		
+//	}
+//	
 	public void OnClick(){
 		clickCount++;
 		Debug.Log ("Clicked");

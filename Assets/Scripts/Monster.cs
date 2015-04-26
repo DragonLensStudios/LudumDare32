@@ -16,7 +16,7 @@ public class Monster : MonoBehaviour
 	PlayerStat pStat;
 	public int attackSpeed;
 	int attackWait;
-	
+
 	Animator anim;
 	public float sightRadius;
 	Vector2 Direction;
@@ -43,6 +43,8 @@ public class Monster : MonoBehaviour
 	}
 	void takeDamage(int damage){
 		m_Health -= damage;
+		
+
 	}
 	void heal(int amount){
 		m_Health += amount;
@@ -203,11 +205,15 @@ public class Monster : MonoBehaviour
 					Debug.Log("Player is being attacked");
 					pStat.takeDamage(m_Attack);
 					attackWait = 0;
+					target.GetComponent<PlayerStat>().isHurt = true;
+				}else{
+					target.GetComponent<PlayerStat>().isHurt = false;
 				}
 			}
 			else
 			{
 				state = enemy_states.E_CHASING;
+
 			}
 
 			break;
@@ -240,5 +246,6 @@ public class Monster : MonoBehaviour
 	//	Debug.Log("Monster Collision");
 		moving = false;
 		state = enemy_states.E_IDLE;
+
 	}
 }

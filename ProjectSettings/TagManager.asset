@@ -9,6 +9,7 @@ TagManager:
   - DialogPanel
   - HasDialog
   - AudioManager
+  - warp
   layers:
   - Default
   - TransparentFX
