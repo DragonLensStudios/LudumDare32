@@ -176,10 +176,19 @@ public class CloudMovement : MonoBehaviour {
 		}
 	}
 
+
+	void OnGUI(){
+		GUI.Box (new Rect(375, 2, Screen.width / 5 / (Slime_Hit.maxHealth / Slime_Hit.health), 36)," ");
+		GUI.Box (new Rect(375, 2, Screen.width / 5, 36), "Enemy Health: " + Slime_Hit.health + "/" + Slime_Hit.maxHealth);
+	
+	}
+
 	void OnTriggerStay2D(Collider2D col)
 	{	
 		Slime_Hit = col.gameObject.GetComponent<SlimeisHit> ();
 		Rock_Hit = col.gameObject.GetComponent<RockisHit> ();
+
+		
 
 
 		if(col.tag == "Player"){

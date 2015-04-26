@@ -377,6 +377,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &36331490
 BoxCollider2D:
@@ -617,6 +618,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &47749495
 BoxCollider2D:
@@ -874,6 +876,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &87536970
 BoxCollider2D:
@@ -1290,6 +1293,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &144243487
 BoxCollider2D:
@@ -1641,6 +1645,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &174581793
 BoxCollider2D:
@@ -1791,6 +1796,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &181636000
 BoxCollider2D:
@@ -2170,6 +2176,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &220225306
 BoxCollider2D:
@@ -2487,6 +2494,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &241112458
 BoxCollider2D:
@@ -2637,6 +2645,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &247108958
 BoxCollider2D:
@@ -2864,6 +2873,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 20
+  maxHealth: 20
   player: {fileID: 0}
 --- !u!61 &254855831
 BoxCollider2D:
@@ -3068,6 +3078,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &256414666
 BoxCollider2D:
@@ -3259,6 +3270,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 20
+  maxHealth: 20
   player: {fileID: 0}
 --- !u!61 &263297591
 BoxCollider2D:
@@ -3397,6 +3409,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 20
+  maxHealth: 20
   player: {fileID: 0}
 --- !u!61 &264127602
 BoxCollider2D:
@@ -3810,6 +3823,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &312543059
 BoxCollider2D:
@@ -3960,6 +3974,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &321807334
 BoxCollider2D:
@@ -4438,6 +4453,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &377410306
 BoxCollider2D:
@@ -4663,6 +4679,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &384627301
 BoxCollider2D:
@@ -4813,6 +4830,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &388118963
 BoxCollider2D:
@@ -4967,6 +4985,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &404410969
 BoxCollider2D:
@@ -5214,7 +5233,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 422107571}
-  m_Mass: 2
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -5300,6 +5319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fccde4e964bf204e809aa2eb6530b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 10
   playerHealth: 10
   isHurt: 0
 --- !u!82 &422107583
@@ -6107,6 +6127,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &433677623
 BoxCollider2D:
@@ -6257,6 +6278,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 20
+  maxHealth: 20
   player: {fileID: 0}
 --- !u!61 &439542394
 BoxCollider2D:
@@ -6407,6 +6429,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &453055602
 BoxCollider2D:
@@ -6709,6 +6732,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &471395451
 BoxCollider2D:
@@ -7224,6 +7248,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &512858852
 BoxCollider2D:
@@ -7519,6 +7544,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &544830138
 BoxCollider2D:
@@ -7914,6 +7940,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &599600676
 BoxCollider2D:
@@ -8346,6 +8373,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &639742854
 BoxCollider2D:
@@ -8496,6 +8524,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &643498327
 BoxCollider2D:
@@ -8956,6 +8985,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &695632203
 BoxCollider2D:
@@ -9276,6 +9306,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &728995010
 BoxCollider2D:
@@ -9426,6 +9457,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &746498524
 BoxCollider2D:
@@ -10326,6 +10358,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &843066294
 BoxCollider2D:
@@ -10476,6 +10509,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &847295909
 BoxCollider2D:
@@ -10626,6 +10660,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &856056710
 BoxCollider2D:
@@ -10956,6 +10991,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 20
+  maxHealth: 20
   player: {fileID: 0}
 --- !u!61 &896563207
 BoxCollider2D:
@@ -11660,6 +11696,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &977735563
 BoxCollider2D:
@@ -11940,6 +11977,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &992197531
 BoxCollider2D:
@@ -12439,6 +12477,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1061503431
 BoxCollider2D:
@@ -12632,6 +12671,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1087768157
 BoxCollider2D:
@@ -12794,6 +12834,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1089373201
 BoxCollider2D:
@@ -13107,6 +13148,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1108647753
 BoxCollider2D:
@@ -13346,6 +13388,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 20
+  maxHealth: 20
   player: {fileID: 0}
 --- !u!61 &1131330863
 BoxCollider2D:
@@ -13565,6 +13608,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1143428991
 BoxCollider2D:
@@ -13848,6 +13892,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1149544769
 BoxCollider2D:
@@ -14040,6 +14085,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1154641974
 BoxCollider2D:
@@ -15698,6 +15744,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1239044718
 BoxCollider2D:
@@ -15848,6 +15895,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1244364650
 BoxCollider2D:
@@ -15998,6 +16046,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1245238990
 BoxCollider2D:
@@ -16256,6 +16305,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1282184270
 BoxCollider2D:
@@ -16406,6 +16456,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1294672687
 BoxCollider2D:
@@ -16587,6 +16638,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1299970076
 BoxCollider2D:
@@ -16737,6 +16789,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1302642320
 BoxCollider2D:
@@ -17147,6 +17200,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1341745821
 BoxCollider2D:
@@ -17297,6 +17351,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1346903011
 BoxCollider2D:
@@ -18223,6 +18278,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1436113814
 BoxCollider2D:
@@ -18492,6 +18548,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1464512615
 BoxCollider2D:
@@ -18884,6 +18941,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1509774932
 BoxCollider2D:
@@ -19087,6 +19145,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1518079806
 BoxCollider2D:
@@ -19237,6 +19296,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1518882071
 BoxCollider2D:
@@ -19804,6 +19864,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1600408457
 BoxCollider2D:
@@ -19954,6 +20015,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1606602843
 BoxCollider2D:
@@ -20104,6 +20166,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1607242236
 BoxCollider2D:
@@ -20475,6 +20538,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1639802904
 BoxCollider2D:
@@ -20871,6 +20935,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1660596436
 BoxCollider2D:
@@ -21078,6 +21143,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1678846449
 BoxCollider2D:
@@ -21572,6 +21638,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1713525967
 BoxCollider2D:
@@ -21917,6 +21984,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1759732825
 BoxCollider2D:
@@ -22095,6 +22163,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1782805428
 BoxCollider2D:
@@ -22388,6 +22457,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1804122193
 BoxCollider2D:
@@ -22799,6 +22869,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1877469614
 BoxCollider2D:
@@ -23003,6 +23074,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1879947511
 BoxCollider2D:
@@ -23215,6 +23287,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1897091787
 BoxCollider2D:
@@ -23515,6 +23588,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &1972808208
 BoxCollider2D:
@@ -24378,6 +24452,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &2018214873
 BoxCollider2D:
@@ -24574,6 +24649,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &2039497807
 BoxCollider2D:
@@ -24766,6 +24842,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &2051709002
 BoxCollider2D:
@@ -24916,6 +24993,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &2053144689
 BoxCollider2D:
@@ -25066,6 +25144,7 @@ MonoBehaviour:
   Slime: {fileID: 0}
   attacked: 0
   health: 2
+  maxHealth: 2
   player: {fileID: 0}
 --- !u!61 &2066057223
 BoxCollider2D:

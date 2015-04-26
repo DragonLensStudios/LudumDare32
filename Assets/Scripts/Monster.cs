@@ -200,12 +200,20 @@ public class Monster : MonoBehaviour
 			 */ 
 			if(Vector3.Distance(this.transform.position, target.transform.position) < 0.46)
 			{
+
+
 				if(attackWait >= attackSpeed)
 				{
 					Debug.Log("Player is being attacked");
 					pStat.takeDamage(m_Attack);
 					attackWait = 0;
 					target.GetComponent<PlayerStat>().isHurt = true;
+
+					
+					Debug.Log ("BoxMade");
+
+
+
 				}else{
 					target.GetComponent<PlayerStat>().isHurt = false;
 				}
