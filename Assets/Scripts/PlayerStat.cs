@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class PlayerStat : MonoBehaviour {
+	public int maxHealth;
 	public float playerHealth;
 	public bool isHurt;
 	Animator anim;
@@ -39,6 +40,13 @@ public class PlayerStat : MonoBehaviour {
 	{
 		
 		Application.LoadLevel("MainMenuScene");
+	}
+
+	void OnGUI(){
+		GUI.Box (new Rect(2, 2, Screen.width / 5 / (maxHealth / playerHealth), 36)," ");
+		GUI.Box (new Rect(2, 2, Screen.width / 5, 36), "Player health: " + playerHealth + "/" + maxHealth);
+
+
 	}
 
 }

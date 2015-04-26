@@ -8,6 +8,7 @@ public class SlimeisHit : MonoBehaviour {
 	public GameObject Slime;
 	public bool attacked;
 	public int health;
+	public int maxHealth;
 	public PlayerAttack player;
 
 	void Start(){
@@ -32,6 +33,7 @@ public class SlimeisHit : MonoBehaviour {
 			GameObject.Destroy(gameObject);
 		}
 	}
-	
+
+
 }
 
