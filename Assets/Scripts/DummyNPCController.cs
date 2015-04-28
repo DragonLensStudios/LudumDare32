@@ -8,6 +8,7 @@ public class DummyNPCController : MonoBehaviour {
 	public bool isconversationdone; //Needs to be private.
 	public int count = 0; //Needs to be private.
 	public bool has_started = true;
+	public string Obstruction;
 	// Use this for initialization
 	public void Finish (){
 		istalking = false;
@@ -18,9 +19,13 @@ public class DummyNPCController : MonoBehaviour {
 		if (col.gameObject.tag == "Player")
 		{
 			InteractionNPC dialog = col.gameObject.GetComponent<InteractionNPC>();
+			if(count > 0)
+			col.gameObject.transform.position = Vector3.Lerp (col.transform.position, transform.position, Time.deltaTime * 10);
+
 			//Debug.Log("ONTrigger with " + col.name);
 			step (dialog);
 		}
+
 
 	}
 	private void step(InteractionNPC dialog){
@@ -28,6 +33,7 @@ public class DummyNPCController : MonoBehaviour {
 		{
 			if (DummyNPCs.Count > count)
 			{
+
 				istalking = true;
 				dialog.startdummy(DummyNPCs[count],this);
 				count++;
@@ -35,15 +41,18 @@ public class DummyNPCController : MonoBehaviour {
 			else
 			{
 				GameObject.Destroy(gameObject);
+				Destroy(GameObject.Find(Obstruction));
 			}
 		}
 	}
 	void OnTriggerExit2D(Collider2D col)
 	{
-		istalking = false;
-		count = 0;
-		col.gameObject.GetComponent<InteractionNPC> ().dialogPanel.SetActive (false);
-		col.gameObject.GetComponent<InteractionNPC>().dummyset = false;
+
+			istalking = false;
+			count = 0;
+//			//col.gameObject.GetComponent<InteractionNPC> ().dialogPanel.SetActive (false);
+//			//col.gameObject.GetComponent<InteractionNPC>().dummyset = false;
+//		}
 	}
 
 	void Start () {

@@ -2,18 +2,19 @@
 using System.Collections;
 
 
-public class RockisHit : MonoBehaviour {
+public class EnemyisHit : MonoBehaviour {
 
 	public Animator anim;
-	public GameObject Rock;
+	public GameObject Enemy;
 	public bool attacked;
 	public int health;
+	public int maxHealth;
 	public PlayerAttack player;
 
 	void Start(){
 
 		anim = GetComponent<Animator> ();
-		Rock = gameObject;
+		Enemy = gameObject;
 
 	}
 
@@ -21,11 +22,9 @@ public class RockisHit : MonoBehaviour {
 	void OnLateUpdate()
 	{
 
-			anim.SetBool("isHit", attacked);
-
+		anim.SetBool ("isHit", attacked);
 
 	}
-
 	void Update()
 	{
 
@@ -34,6 +33,7 @@ public class RockisHit : MonoBehaviour {
 			GameObject.Destroy(gameObject);
 		}
 	}
-	
+
+
 }
 

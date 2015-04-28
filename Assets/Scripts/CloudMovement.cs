@@ -17,12 +17,12 @@ public class CloudMovement : MonoBehaviour {
 	public float verticalSpeed;
 	private Vector3 Pos;
 	private Vector3 mousePosition;
-	private GameObject Slime;
-	private GameObject Rock;
+	private GameObject Enemy;
 
 
-	public SlimeisHit Slime_Hit;
-	public RockisHit Rock_Hit;
+
+	public EnemyisHit Enemy_Hit;
+
 
 
 	public int cloudDamageExplosion;
@@ -43,7 +43,6 @@ public class CloudMovement : MonoBehaviour {
 	private GameObject LightningClone;
 
 
-	// Use this for initialization
 	void Start () {
 		mousePosition = transform.position;
 		cloudDamageExplosion = 3;
@@ -52,7 +51,6 @@ public class CloudMovement : MonoBehaviour {
 		cloudDamageLightning = 5;
 	}
 
-	// Update is called once per frame
 	void Update () {
 			
 		if(movingCloud == true && !atplayer) {
@@ -64,69 +62,69 @@ public class CloudMovement : MonoBehaviour {
 			verticalSpeed = 2.0f;
 			float h = horizontalSpeed * Input.GetAxis ("Horizontal");
 			float y = verticalSpeed * Input.GetAxis ("Vertical");
-			iTween.MoveUpdate (gameObject, iTween.Hash ("position", Pos + Vector3.left * h, "time", 1.5f, "easetype", "linear", "oncomplete", "CloudMoveComplete"));
-			iTween.MoveUpdate (gameObject, iTween.Hash ("position", Pos + Vector3.down * y, "time", 1.5f, "easetype", "linear", "oncomplete", "CloudMoveComplete"));
+			iTween.MoveUpdate (gameObject, iTween.Hash ("position", Pos + Vector3.left * h, "time", 1.0f, "easetype", "linear", "oncomplete", "CloudMoveComplete"));
+			iTween.MoveUpdate (gameObject, iTween.Hash ("position", Pos + Vector3.down * y, "time", 1.0f, "easetype", "linear", "oncomplete", "CloudMoveComplete"));
 		}
 
 		if (Input.GetButton ("Fire2")) {
 			movingCloud = false;
 			mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			//iTween.Stop(gameObject);
 
-			iTween.MoveTo (gameObject, iTween.Hash ("position", mousePosition, "time", 2.5f, "easetype", "linear"));
+			iTween.MoveTo (gameObject, iTween.Hash ("position", mousePosition, "time", 1.0f, "easetype", "linear", "looptype", "none"));
+
 		} else {
 			movingCloud = true;
 		}
 
 		if (Input.GetKeyDown ("1")) {
 			
-			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
-			//Instantiate (tornado, transform.position, Quaternion.identity);
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(tornado, transform.position, transform.rotation);
 				Destroy(genClone, 2f);
 				GetComponents<AudioSource>()[3].Play();
+				Enemy_Hit.health -= cloudDamageTornado;
 			}
 
+			
 
-			//if(explosionClone = this.transform.position);
 
 		}
 
 		if (Input.GetKeyDown ("2")) {
 			
-			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(explosion, transform.position, transform.rotation);
 				Destroy(genClone, 2f);
 				GetComponents<AudioSource>()[0].Play();
+				Enemy_Hit.health -= cloudDamageExplosion;
 			}
-			//if(explosionClone = this.transform.position);
-			
+
+
+
+
 		}
 
 		if (Input.GetKeyDown ("3")) {
 			
-			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(water, transform.position, transform.rotation);
 				Destroy(genClone, 2f);
 				GetComponents<AudioSource>()[2].Play();
+				Enemy_Hit.health -= cloudDamageWater;
+
 			}
-			//if(explosionClone = this.transform.position);
-			
+
 		}
 
 		if (Input.GetKeyDown ("4")) {
 			
-			//explosionClone = (GameObject)Instantiate (explosion, transform.position, Quaternion.identity);
 			if(genClone == null){
 				genClone = (GameObject) Instantiate(lightning, transform.position, transform.rotation);
 				Destroy(genClone, 2f);
 				GetComponents<AudioSource>()[1].Play();
+				Enemy_Hit.health -= cloudDamageLightning;
 			}
-			//if(explosionClone = this.transform.position);
-			
+
 		}
 
 
@@ -144,79 +142,50 @@ public class CloudMovement : MonoBehaviour {
 		Debug.Log ("The cloud is done moving");
 	}
 
-	/*
-	void OnTriggerEnter2D(Collider2D col){
-		{
 
-			Slime_Hit = col.gameObject.GetComponent<SlimeisHit> ();
-
-			if(col.tag == "Player"){
-				Debug.Log("stopping");
-				atplayer = true;
-			}
-
-				//Destroy(explosionClone);
-		
-		}
-	}*/
 
 	void OnTriggerExit2D(Collider2D col){
 		{
 			
 			
-			Slime_Hit = null;
-			Rock_Hit = null;
+			Enemy_Hit = null;
+
 			
 			if(col.tag == "Player"){
-				//Debug.Log("moving");
 				atplayer = false;
 			}
-			//Destroy(explosionClone);
 			
 		}
 	}
 
 
 	void OnGUI(){
-		GUI.Box (new Rect(375, 2, Screen.width / 5 / (Slime_Hit.maxHealth / Slime_Hit.health), 36)," ");
-		GUI.Box (new Rect(375, 2, Screen.width / 5, 36), "Enemy Health: " + Slime_Hit.health + "/" + Slime_Hit.maxHealth);
-	
+		if (Enemy_Hit) {
+			GUI.Box (new Rect (375, 2, Screen.width / 5 / (Enemy_Hit.maxHealth / Enemy_Hit.health), 36), " ");
+			GUI.Box (new Rect (375, 2, Screen.width / 5, 36), Enemy_Hit.name + " Health: " + Enemy_Hit.health + "/" + Enemy_Hit.maxHealth);
+		}
 	}
 
 	void OnTriggerStay2D(Collider2D col)
 	{	
-		Slime_Hit = col.gameObject.GetComponent<SlimeisHit> ();
-		Rock_Hit = col.gameObject.GetComponent<RockisHit> ();
+		Enemy_Hit = col.gameObject.GetComponent<EnemyisHit> ();
+		if (Enemy_Hit) {
+			if (Enemy_Hit.health < 1) {
+				Enemy_Hit.health = 0;
+			}
+		}
 
 		
 
 
 		if(col.tag == "Player"){
-			//Debug.Log("stopping");
 			atplayer = true;
 		}
 
 
 
-		if (Input.GetKeyDown ("1")) { 
 
-			Slime_Hit.health -= cloudDamageTornado;
-			Rock_Hit.health -= cloudDamageTornado;
 
-		
-		}
-		if (Input.GetKeyDown ("2")) { 
-			Slime_Hit.health -= cloudDamageExplosion;
-			Rock_Hit.health -= cloudDamageExplosion;
-		}
-		if (Input.GetKeyDown ("3")) { 
-			Slime_Hit.health -= cloudDamageWater;
-			Rock_Hit.health -= cloudDamageWater;
-		}
-		if (Input.GetKeyDown ("4")) { 
-			Slime_Hit.health -= cloudDamageLightning;
-			Rock_Hit.health -= cloudDamageLightning;
-		}
 
 	}
 
