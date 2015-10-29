@@ -8,15 +8,16 @@ public class PlayerAttack : MonoBehaviour {
 
 	public bool attacked;
 	public GameObject isUser;
-	public SlimeisHit Slime;
-	public int slimeHealth;
+	public EnemyisHit Enemy;
+	public int enemyHealth;
+	public int rockHealth;
 	public int playerSwordDamage;
 	public int damageDeal;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
 		playerSwordDamage = 1;
-		slimeHealth = 2;
+		rockHealth = 2;
  
 	}
 	
@@ -42,8 +43,7 @@ public class PlayerAttack : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col)
 	{
 
-
-		Slime = col.gameObject.GetComponent<SlimeisHit> ();
+		Enemy = col.gameObject.GetComponent<EnemyisHit> ();
 
 	//	if(col.gameObject.tag == ("monster"))
 	//	{
@@ -57,16 +57,18 @@ public class PlayerAttack : MonoBehaviour {
 		if (attacked == true) {
 		
 			Debug.Log ("You hit!");
-			Slime.GetComponent<SlimeisHit> ().attacked = true;
-			Slime.GetComponent<SlimeisHit> ().anim.SetBool("isHit", attacked);
-			Slime.GetComponent<SlimeisHit> ().health -= playerSwordDamage;
+			Enemy.GetComponent<EnemyisHit> ().attacked = true;
+			Enemy.GetComponent<EnemyisHit> ().anim.SetBool("isHit", attacked);
+			Enemy.GetComponent<EnemyisHit> ().health -= playerSwordDamage;
+
 			Debug.Log ("IM GETTING HERE");
 
 
 		} else {
 
-			Slime.GetComponent<SlimeisHit>().attacked = false;
-			Slime.GetComponent<SlimeisHit> ().anim.SetBool("isHit", attacked);
+			Enemy.GetComponent<EnemyisHit>().attacked = false;
+			Enemy.GetComponent<EnemyisHit> ().anim.SetBool("isHit", attacked);
+
 
 		}
 	}

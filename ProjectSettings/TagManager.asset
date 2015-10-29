@@ -8,6 +8,8 @@ TagManager:
   - monster
   - DialogPanel
   - HasDialog
+  - AudioManager
+  - warp
   layers:
   - Default
   - TransparentFX
